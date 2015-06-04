@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var firstLabel : UILabel?
+    @IBOutlet var secondLabel : UILabel?
+    @IBOutlet var thirdLabel : UILabel?
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +25,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func tapRandom(){
+        randomWord()
+    }
+    
+    func randomWord(){
+        firstLabel!.text = "1"
+        secondLabel!.text = "1"
+        thirdLabel!.text = "1"
+        
+    }
+    
+    
 
 }
 

@@ -29,13 +29,28 @@ class ViewController: UIViewController {
         randomWord()
     }
     
+    //API取得の開始処理
     func randomWord(){
+        
+        let kizashiUrl = NSURL(string:"http://kizasi.jp/kizapi.py?type=rank")
+        let req = NSURLRequest(URL: kizashiUrl!)
+        let connection: NSURLConnection = NSURLConnection(request: req, delegate: self, startImmediately: false)!
+        
+        //NSURLConnectionを使いAPIを取得する
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler: response)
+        
         firstLabel!.text = "1"
         secondLabel!.text = "1"
         thirdLabel!.text = "1"
         
     }
     
+    //取得したAPIデータの処理
+    func response(res: NSURLResponse!, data: NSData!, error: NSError!){
+        
+        println(data)
+    }
+
     
 
 }

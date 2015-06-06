@@ -415,6 +415,7 @@
 				6F1B143E1B1DFD9A00864755 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F1B143F1B1DFD9A00864755 /* Build configuration list for PBXNativeTarget "sandaibanashiTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +424,7 @@
 				6F1B14411B1DFD9A00864755 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

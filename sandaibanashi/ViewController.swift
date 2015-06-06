@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Accounts
+import Social
 
 class ViewController: UIViewController {
 
     @IBOutlet var firstLabel : UILabel?
     @IBOutlet var secondLabel : UILabel?
     @IBOutlet var thirdLabel : UILabel?
+    
+    var myComposeView : SLComposeViewController!
+    
+    var accountStore = ACAccountStore()
+    var twAccount : ACAccount?
     
 
     override func viewDidLoad() {
@@ -48,10 +55,29 @@ class ViewController: UIViewController {
     //取得したAPIデータの処理
     func response(res: NSURLResponse!, data: NSData!, error: NSError!){
         
-        println(data)
-    }
-
+         var out:String = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
+        
+        //let json:NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary
+        //let res:NSDictionary = json.objectForKey("item") as NSDictionary
+        //let pref:NSArray = res.objectForKey("title") as NSArray
+        
     
+        //for var i=0 ; i<pref.count ; i++ {
+            println(out)
+        //}
+    }
+    
+    @IBAction func tweet(){
 
+            // SLComposeViewControllerのインスタンス化.
+            // ServiceTypeをTwitterに指定.
+            myComposeView = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            
+            // 投稿するテキストを指定.
+            myComposeView.setInitialText("Twitter Test from Swift")
+            
+            // myComposeViewの画面遷移.
+            self.presentViewController(myComposeView, animated: true, completion: nil)
+    }
 }
 

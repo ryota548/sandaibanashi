@@ -12,6 +12,8 @@
 	<dict>
 		<key>4955FF576540CAE856DBEF72713D4FF094559508</key>
 		<string>github.com:ryota548/sandaibanashi.git</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>https://github.com/Alamofire/Alamofire.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>sandaibanashi.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>4955FF576540CAE856DBEF72713D4FF094559508</key>
 		<string>../..</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>../..Alamofire</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:ryota548/sandaibanashi.git</string>
@@ -35,6 +39,14 @@
 			<string>4955FF576540CAE856DBEF72713D4FF094559508</string>
 			<key>IDESourceControlWCCName</key>
 			<string>sandaibanashi</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sandaibanashiAlamofire</string>
 		</dict>
 	</array>
 </dict>

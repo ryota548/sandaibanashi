@@ -69,8 +69,8 @@
                     </view>
                     <connections>
                         <outlet property="firstLabel" destination="aO8-Vt-1uq" id="2SB-hf-JaT"/>
-                        <outlet property="secondLabel" destination="3QV-dj-01T" id="5Ib-gd-ZVx"/>
-                        <outlet property="thirdLabel" destination="jRa-hi-Dq9" id="Uv9-Ro-8ir"/>
+                        <outlet property="secondLabel" destination="jRa-hi-Dq9" id="5r8-dn-QqJ"/>
+                        <outlet property="thirdLabel" destination="3QV-dj-01T" id="YXN-wG-hEc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

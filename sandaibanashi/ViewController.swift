@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var secondLabel : UILabel?
     @IBOutlet var thirdLabel : UILabel?
     
+    var strArray : [String] = []
+    
     var myComposeView : SLComposeViewController!
     
     var accountStore = ACAccountStore()
@@ -46,9 +48,18 @@ class ViewController: UIViewController {
         //NSURLConnectionを使いAPIを取得する
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler: response)
         
-        firstLabel!.text = "1"
-        secondLabel!.text = "1"
-        thirdLabel!.text = "1"
+        
+        strArray.append("1")
+        strArray.append("2")
+        strArray.append("3")
+        
+        firstLabel!.text = strArray[0]
+        secondLabel!.text = strArray[1]
+        thirdLabel!.text = strArray[2]
+        
+        
+        
+        
         
     }
     
@@ -67,17 +78,22 @@ class ViewController: UIViewController {
         //}
     }
     
-    @IBAction func tweet(){
-
-            // SLComposeViewControllerのインスタンス化.
-            // ServiceTypeをTwitterに指定.
-            myComposeView = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            
-            // 投稿するテキストを指定.
-            myComposeView.setInitialText("Twitter Test from Swift")
-            
-            // myComposeViewの画面遷移.
-            self.presentViewController(myComposeView, animated: true, completion: nil)
+    @IBAction func tweetButton(){
+        tweet()
     }
+    
+    func tweet(){
+        
+        // SLComposeViewControllerのインスタンス化.
+        // ServiceTypeをTwitterに指定.
+        myComposeView = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        
+        // 投稿するテキストを指定.
+        myComposeView.setInitialText("Twitter Test from Swift #三題噺 #\(strArray[0]) #\(strArray[1]) #\(strArray[2])")
+        
+        // myComposeViewの画面遷移.
+        self.presentViewController(myComposeView, animated: true, completion: nil)
+    }
+
 }
 

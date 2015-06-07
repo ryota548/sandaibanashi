@@ -20,9 +20,6 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     
     var myComposeView : SLComposeViewController!
     
-    var accountStore = ACAccountStore()
-    var twAccount : ACAccount?
-    
     var item = [Dictionary<String, String>]()
     
     var parseKey = ""
@@ -32,6 +29,8 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        randomWord()
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,20 +51,6 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         
         //NSURLConnectionを使いAPIを取得する
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler: response)
-        
-        
-        strArray.append("1")
-        strArray.append("2")
-        strArray.append("3")
-        
-        firstLabel!.text = strArray[0]
-        secondLabel!.text = strArray[1]
-        thirdLabel!.text = strArray[2]
-        
-        
-        
-        
-        
     }
     
     //取得したAPIデータの処理
@@ -128,25 +113,23 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     
     func parserDidEndDocument(parser: NSXMLParser)
     {
-        println("item = \(item.count)")
-        for var i = 0; i < 30; i++ {
-        println(item[i]["title"]!)
-        }
+        var x = Int(arc4random_uniform(30))
+        var y = Int(arc4random_uniform(30))
+        var z = Int(arc4random_uniform(30))
+        firstLabel!.text = item[x]["title"]
+        secondLabel!.text = item[y]["title"]
+        thirdLabel!.text = item[z]["title"]
     }
     
     
     @IBAction func tweetButton(){
-        tweet()
-    }
-    
-    func tweet(){
         
         // SLComposeViewControllerのインスタンス化.
         // ServiceTypeをTwitterに指定.
         myComposeView = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
         
         // 投稿するテキストを指定.
-        myComposeView.setInitialText("Twitter Test from Swift #三題噺 #\(strArray[0]) #\(strArray[1]) #\(strArray[2])")
+        myComposeView.setInitialText("Twitter Test from Swift #三題噺 #\(firstLabel!.text) #\(secondLabel!.text) #\(thirdLabel!.text)")
         
         // myComposeViewの画面遷移.
         self.presentViewController(myComposeView, animated: true, completion: nil)

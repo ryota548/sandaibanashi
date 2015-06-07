@@ -10,8 +10,8 @@ import UIKit
 import Accounts
 import Social
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController,NSXMLParserDelegate {
+    
     @IBOutlet var firstLabel : UILabel?
     @IBOutlet var secondLabel : UILabel?
     @IBOutlet var thirdLabel : UILabel?
@@ -23,17 +23,22 @@ class ViewController: UIViewController {
     var accountStore = ACAccountStore()
     var twAccount : ACAccount?
     
-
+    var item = [Dictionary<String, String>]()
+    
+    var parseKey = ""
+    var titleStr = ""
+    var index = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func tapRandom(){
         randomWord()
     }
@@ -66,17 +71,68 @@ class ViewController: UIViewController {
     //取得したAPIデータの処理
     func response(res: NSURLResponse!, data: NSData!, error: NSError!){
         
-         var out:String = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
         
-        //let json:NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary
-        //let res:NSDictionary = json.objectForKey("item") as NSDictionary
-        //let pref:NSArray = res.objectForKey("title") as NSArray
+        var parser : NSXMLParser? = NSXMLParser(data: data)
+        if parser != nil {
+            // NSXMLParserDelegateをセット
+            parser!.delegate = self;
+            parser!.parse()
+            
+        } else {
+            // パースに失敗した時
+            println("failed to parse XML")
+        }
         
-    
-        //for var i=0 ; i<pref.count ; i++ {
-            println(out)
-        //}
     }
+    
+    func parserDidStartDocument(parser: NSXMLParser)
+    {
+        index = -1
+        item = [Dictionary<String, String>]()
+    }
+    
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject])
+    {
+        parseKey = ""
+        
+        if elementName == "item" {
+            // Itemオブジェクトを保存するItems配列を初期化
+            titleStr = ""
+            item.append([
+                "title": ""
+                ])
+            index = item.count - 1
+            NSLog("item一致したお")
+            
+        }else{
+            parseKey = elementName
+            NSLog("item一致してないお")
+        }
+    }
+    
+    func parser(parser: NSXMLParser, foundCharacters string: String?)
+    {
+        if index >= 0 {
+            if parseKey == "title" {
+                item[index]["title"] = item[index]["title"]! + string!
+                NSLog("title一致したお")
+                
+            }
+            NSLog("title一致してないお")
+        }
+    }
+    
+    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
+    {
+         parseKey = ""
+    }
+    
+    func parserDidEndDocument(parser: NSXMLParser)
+    {
+        println("item = \(item.count)")
+        println("\(item)")
+    }
+    
     
     @IBAction func tweetButton(){
         tweet()
@@ -94,6 +150,6 @@ class ViewController: UIViewController {
         // myComposeViewの画面遷移.
         self.presentViewController(myComposeView, animated: true, completion: nil)
     }
-
+    
 }
 

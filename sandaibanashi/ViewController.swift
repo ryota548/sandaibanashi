@@ -116,7 +116,6 @@ class ViewController: UIViewController,NSXMLParserDelegate {
             if parseKey == "title" {
                 item[index]["title"] = item[index]["title"]! + string!
                 NSLog("title一致したお")
-                
             }
             NSLog("title一致してないお")
         }
@@ -130,7 +129,9 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     func parserDidEndDocument(parser: NSXMLParser)
     {
         println("item = \(item.count)")
-        println("\(item)")
+        for var i = 0; i < 30; i++ {
+        println(item[i]["title"]!)
+        }
     }
     
     

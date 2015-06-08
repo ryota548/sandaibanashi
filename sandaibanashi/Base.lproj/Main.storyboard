@@ -12,60 +12,90 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SpringButton" customModule="sandaibanashi" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QV-dj-01T">
-                                <rect key="frame" x="279" y="192" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QV-dj-01T" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
+                                <rect key="frame" x="278" y="192" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIn-Rp-UZP">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="274" y="285" width="53" height="30"/>
+                                <state key="normal" title="random">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="tapRandom" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qcu-MA-UHq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRa-hi-Dq9">
-                                <rect key="frame" x="279" y="131" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRa-hi-Dq9" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
+                                <rect key="frame" x="278" y="131" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-Vt-1uq" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
+                                <rect key="frame" x="278" y="70" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmR-Sl-ejN">
-                                <rect key="frame" x="277" y="470" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="281" y="470" width="39" height="30"/>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.67450980392156867" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="tweet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="tweetButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADY-EF-kkQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-Vt-1uq">
-                                <rect key="frame" x="279" y="70" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="jIn-Rp-UZP" secondAttribute="centerY" id="BkR-Yh-mQi"/>
                             <constraint firstItem="jRa-hi-Dq9" firstAttribute="top" secondItem="aO8-Vt-1uq" secondAttribute="bottom" constant="40" id="CHe-l7-Do1"/>
+                            <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="F0z-t4-Sf3"/>
                             <constraint firstAttribute="centerX" secondItem="aO8-Vt-1uq" secondAttribute="centerX" id="Fm1-Cy-AYv"/>
                             <constraint firstAttribute="centerX" secondItem="3QV-dj-01T" secondAttribute="centerX" id="IKW-SR-NMj"/>
                             <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="Le6-10-j1B"/>
+                            <constraint firstAttribute="centerY" secondItem="QmR-Sl-ejN" secondAttribute="centerY" id="Of7-ja-5Lf"/>
+                            <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="ThG-JD-kY1"/>
                             <constraint firstAttribute="centerX" secondItem="jRa-hi-Dq9" secondAttribute="centerX" id="VEz-Jn-ayh"/>
                             <constraint firstItem="aO8-Vt-1uq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="bID-fV-sjY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="100" id="hsh-t5-C66"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="100" id="wlK-nI-UdT"/>
                             <constraint firstItem="3QV-dj-01T" firstAttribute="top" secondItem="jRa-hi-Dq9" secondAttribute="bottom" constant="40" id="zU1-ek-cOS"/>
                             <constraint firstAttribute="centerX" secondItem="jIn-Rp-UZP" secondAttribute="centerX" id="zfH-Cv-oHz"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
+                        </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Le6-10-j1B"/>
+                                <exclude reference="Of7-ja-5Lf"/>
+                                <exclude reference="ThG-JD-kY1"/>
+                                <exclude reference="wlK-nI-UdT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="firstLabel" destination="aO8-Vt-1uq" id="2SB-hf-JaT"/>
@@ -75,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="264" y="542"/>
+            <point key="canvasLocation" x="168" y="393"/>
         </scene>
     </scenes>
 </document>

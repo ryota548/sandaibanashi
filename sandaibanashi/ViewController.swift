@@ -12,9 +12,9 @@ import Social
 
 class ViewController: UIViewController,NSXMLParserDelegate {
     
-    @IBOutlet var firstLabel : UILabel!
-    @IBOutlet var secondLabel : UILabel!
-    @IBOutlet var thirdLabel : UILabel!
+    @IBOutlet var firstLabel : SpringLabel!
+    @IBOutlet var secondLabel : SpringLabel!
+    @IBOutlet var thirdLabel : SpringLabel!
     
     var strArray : [String] = []
     
@@ -39,6 +39,14 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     }
     
     @IBAction func tapRandom(){
+        
+        
+        firstLabel.animation = "shake"
+        secondLabel.animation = "shake"
+        thirdLabel.animation = "shake"
+        firstLabel.animate()
+        secondLabel.animate()
+        thirdLabel.animate()
         randomWord()
     }
     

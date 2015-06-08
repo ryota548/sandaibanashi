@@ -14,7 +14,6 @@
 		6F1B142A1B1DFD9A00864755 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B14291B1DFD9A00864755 /* Images.xcassets */; };
 		6F1B142D1B1DFD9A00864755 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B142B1B1DFD9A00864755 /* LaunchScreen.xib */; };
 		6F1B14391B1DFD9A00864755 /* sandaibanashiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B14381B1DFD9A00864755 /* sandaibanashiTests.swift */; };
-		6FFC61641B2561BB00211A3E /* twitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFC61631B2561BB00211A3E /* twitterButton.png */; };
 		6FFC61841B25708500211A3E /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFC61661B25708400211A3E /* AsyncButton.swift */; };
 		6FFC61851B25708500211A3E /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFC61671B25708400211A3E /* AsyncImageView.swift */; };
 		6FFC61861B25708500211A3E /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFC61681B25708400211A3E /* AutoTextView.swift */; };
@@ -68,7 +67,6 @@
 		6F1B14321B1DFD9A00864755 /* sandaibanashiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sandaibanashiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F1B14371B1DFD9A00864755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F1B14381B1DFD9A00864755 /* sandaibanashiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sandaibanashiTests.swift; sourceTree = "<group>"; };
-		6FFC61631B2561BB00211A3E /* twitterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterButton.png; sourceTree = "<group>"; };
 		6FFC61661B25708400211A3E /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		6FFC61671B25708400211A3E /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		6FFC61681B25708400211A3E /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				6FFC61651B25708400211A3E /* Spring */,
-				6FFC61631B2561BB00211A3E /* twitterButton.png */,
 				6F1B141F1B1DFD9A00864755 /* AppDelegate.swift */,
 				6F1B14241B1DFD9A00864755 /* ViewController.swift */,
 				6F1B14261B1DFD9A00864755 /* Main.storyboard */,
@@ -300,7 +297,6 @@
 				6F1B142A1B1DFD9A00864755 /* Images.xcassets in Resources */,
 				6FFC61931B25708500211A3E /* LoadingView.xib in Resources */,
 				6FFC61901B25708500211A3E /* Info.plist in Resources */,
-				6FFC61641B2561BB00211A3E /* twitterButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

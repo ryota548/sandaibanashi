@@ -41,9 +41,9 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     @IBAction func tapRandom(){
         
         
-        firstLabel.animation = "shake"
-        secondLabel.animation = "shake"
-        thirdLabel.animation = "shake"
+        firstLabel.animation = "swing"
+        secondLabel.animation = "swing"
+        thirdLabel.animation = "swing"
         firstLabel.animate()
         secondLabel.animate()
         thirdLabel.animate()
@@ -123,6 +123,8 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         secondLabel.text = item[y]["title"]
         thirdLabel.text = item[z]["title"]
     }
+    
+    
     
     
     @IBAction func tweetButton(){

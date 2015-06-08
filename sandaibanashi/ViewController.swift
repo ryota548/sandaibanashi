@@ -12,9 +12,9 @@ import Social
 
 class ViewController: UIViewController,NSXMLParserDelegate {
     
-    @IBOutlet var firstLabel : UILabel?
-    @IBOutlet var secondLabel : UILabel?
-    @IBOutlet var thirdLabel : UILabel?
+    @IBOutlet var firstLabel : UILabel!
+    @IBOutlet var secondLabel : UILabel!
+    @IBOutlet var thirdLabel : UILabel!
     
     var strArray : [String] = []
     
@@ -87,11 +87,8 @@ class ViewController: UIViewController,NSXMLParserDelegate {
                 "title": ""
                 ])
             index = item.count - 1
-            NSLog("item一致したお")
-            
         }else{
             parseKey = elementName
-            NSLog("item一致してないお")
         }
     }
     
@@ -100,9 +97,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         if index >= 0 {
             if parseKey == "title" {
                 item[index]["title"] = item[index]["title"]! + string!
-                NSLog("title一致したお")
             }
-            NSLog("title一致してないお")
         }
     }
     
@@ -116,9 +111,9 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         var x = Int(arc4random_uniform(30))
         var y = Int(arc4random_uniform(30))
         var z = Int(arc4random_uniform(30))
-        firstLabel!.text = item[x]["title"]
-        secondLabel!.text = item[y]["title"]
-        thirdLabel!.text = item[z]["title"]
+        firstLabel.text = item[x]["title"]
+        secondLabel.text = item[y]["title"]
+        thirdLabel.text = item[z]["title"]
     }
     
     
@@ -129,7 +124,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         myComposeView = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
         
         // 投稿するテキストを指定.
-        myComposeView.setInitialText("Twitter Test from Swift #三題噺 #\(firstLabel!.text) #\(secondLabel!.text) #\(thirdLabel!.text)")
+        myComposeView.setInitialText("Twitter Test from Swift #三題噺 #\(firstLabel.text!) #\(secondLabel.text!) #\(thirdLabel.text!)")
         
         // myComposeViewの画面遷移.
         self.presentViewController(myComposeView, animated: true, completion: nil)

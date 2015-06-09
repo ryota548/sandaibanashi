@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F02EC511B26C268002F8EE1 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F02EC501B26C267002F8EE1 /* startViewController.swift */; };
+		6F02EC531B27B1AF002F8EE1 /* font_1_honokamarugo_1.1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F02EC521B27B1AF002F8EE1 /* font_1_honokamarugo_1.1.ttf */; };
 		6F1B14201B1DFD9A00864755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B141F1B1DFD9A00864755 /* AppDelegate.swift */; };
 		6F1B14231B1DFD9A00864755 /* sandaibanashi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B14211B1DFD9A00864755 /* sandaibanashi.xcdatamodeld */; };
 		6F1B14251B1DFD9A00864755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B14241B1DFD9A00864755 /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		6F02EC501B26C267002F8EE1 /* startViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
+		6F02EC521B27B1AF002F8EE1 /* font_1_honokamarugo_1.1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_1_honokamarugo_1.1.ttf; sourceTree = "<group>"; };
 		6F1B141A1B1DFD9A00864755 /* sandaibanashi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sandaibanashi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F1B141E1B1DFD9A00864755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F1B141F1B1DFD9A00864755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		6F1B141C1B1DFD9A00864755 /* sandaibanashi */ = {
 			isa = PBXGroup;
 			children = (
+				6F02EC521B27B1AF002F8EE1 /* font_1_honokamarugo_1.1.ttf */,
 				6FFC61651B25708400211A3E /* Spring */,
 				6F1B141F1B1DFD9A00864755 /* AppDelegate.swift */,
 				6F1B14241B1DFD9A00864755 /* ViewController.swift */,
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F1B14281B1DFD9A00864755 /* Main.storyboard in Resources */,
+				6F02EC531B27B1AF002F8EE1 /* font_1_honokamarugo_1.1.ttf in Resources */,
 				6F1B142D1B1DFD9A00864755 /* LaunchScreen.xib in Resources */,
 				6F1B142A1B1DFD9A00864755 /* Images.xcassets in Resources */,
 				6FFC61931B25708500211A3E /* LoadingView.xib in Resources */,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F02EC511B26C268002F8EE1 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F02EC501B26C267002F8EE1 /* startViewController.swift */; };
 		6F1B14201B1DFD9A00864755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B141F1B1DFD9A00864755 /* AppDelegate.swift */; };
 		6F1B14231B1DFD9A00864755 /* sandaibanashi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B14211B1DFD9A00864755 /* sandaibanashi.xcdatamodeld */; };
 		6F1B14251B1DFD9A00864755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B14241B1DFD9A00864755 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F02EC501B26C267002F8EE1 /* startViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
 		6F1B141A1B1DFD9A00864755 /* sandaibanashi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sandaibanashi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F1B141E1B1DFD9A00864755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F1B141F1B1DFD9A00864755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				6FFC61651B25708400211A3E /* Spring */,
 				6F1B141F1B1DFD9A00864755 /* AppDelegate.swift */,
 				6F1B14241B1DFD9A00864755 /* ViewController.swift */,
+				6F02EC501B26C267002F8EE1 /* startViewController.swift */,
 				6F1B14261B1DFD9A00864755 /* Main.storyboard */,
 				6F1B14291B1DFD9A00864755 /* Images.xcassets */,
 				6F1B142B1B1DFD9A00864755 /* LaunchScreen.xib */,
@@ -322,6 +325,7 @@
 				6FFC61871B25708500211A3E /* BlurView.swift in Sources */,
 				6FFC61A01B25708500211A3E /* UnwindSegue.swift in Sources */,
 				6FFC61921B25708500211A3E /* LoadingView.swift in Sources */,
+				6F02EC511B26C268002F8EE1 /* startViewController.swift in Sources */,
 				6FFC619B1B25708500211A3E /* SpringTextField.swift in Sources */,
 				6FFC61961B25708500211A3E /* Spring.swift in Sources */,
 				6F1B14251B1DFD9A00864755 /* ViewController.swift in Sources */,

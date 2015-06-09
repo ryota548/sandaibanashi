@@ -116,9 +116,16 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     
     func parserDidEndDocument(parser: NSXMLParser)
     {
-        var x = Int(arc4random_uniform(30))
-        var y = Int(arc4random_uniform(30))
-        var z = Int(arc4random_uniform(30))
+        var x : Int
+        var y : Int
+        var z : Int
+        
+        do {
+        x = Int(arc4random_uniform(30))
+        y = Int(arc4random_uniform(30))
+        z = Int(arc4random_uniform(30))
+        } while x == y || y == z || z == x
+        
         firstLabel.text = item[x]["title"]
         secondLabel.text = item[y]["title"]
         thirdLabel.text = item[z]["title"]

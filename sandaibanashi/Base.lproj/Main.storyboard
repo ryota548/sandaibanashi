@@ -14,6 +14,8 @@
             <string>Honoka-Maru-Gothic</string>
             <string>Honoka-Maru-Gothic</string>
             <string>Honoka-Maru-Gothic</string>
+            <string>Honoka-Maru-Gothic</string>
+            <string>Honoka-Maru-Gothic</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -30,29 +32,66 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQz-os-4rK">
-                                <rect key="frame" x="266" y="463" width="68" height="37"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
+                                <rect key="frame" x="259" y="458" width="82" height="42"/>
+                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="30"/>
                                 <state key="normal" title="Try it!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Vfx-O9-HnD"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="Vfx-O9-HnD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三題噺ジェネレーター" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-hk-gib">
                                 <rect key="frame" x="154" y="120" width="292" height="32"/>
                                 <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="32"/>
-                                <color key="textColor" red="0.047058823529411764" green="0.37254901960784315" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pge-Ib-dyM">
+                                <rect key="frame" x="243" y="346" width="115" height="32"/>
+                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
+                                <state key="normal" title="三題噺とは？">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setumei:" destination="UwU-H7-06e" eventType="touchUpInside" id="izH-6H-Vi5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZJ-FY-hRP">
+                                <rect key="frame" x="244" y="386" width="113" height="32"/>
+                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
+                                <state key="normal" title="オチのつけ方">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ochi:" destination="UwU-H7-06e" eventType="touchUpInside" id="Cap-S9-GR5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.6588235294117647" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="PQz-os-4rK" secondAttribute="centerX" id="6Uc-m5-N41"/>
+                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="JZJ-FY-hRP" secondAttribute="bottom" constant="40" id="OsJ-Ss-pEz"/>
+                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="150" id="Oz4-0Y-8Ex"/>
+                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="200" id="eEw-Pf-Pdb"/>
+                            <constraint firstAttribute="centerX" secondItem="JZJ-FY-hRP" secondAttribute="centerX" id="haR-7R-G6K"/>
                             <constraint firstItem="drA-gH-LdY" firstAttribute="top" secondItem="PQz-os-4rK" secondAttribute="bottom" constant="100" id="i7x-Ti-O7x"/>
+                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="100" id="osE-i4-xdQ"/>
                             <constraint firstAttribute="centerX" secondItem="rgs-hk-gib" secondAttribute="centerX" id="pFA-mo-amW"/>
+                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="80" id="s2r-kF-ymV"/>
+                            <constraint firstAttribute="centerX" secondItem="Pge-Ib-dyM" secondAttribute="centerX" id="udU-5A-k9l"/>
                             <constraint firstItem="rgs-hk-gib" firstAttribute="top" secondItem="xNX-K4-OOu" secondAttribute="bottom" constant="100" id="xK3-gw-dU4"/>
+                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="70" id="xTU-5T-rvA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Oz4-0Y-8Ex"/>
+                                <exclude reference="eEw-Pf-Pdb"/>
+                                <exclude reference="osE-i4-xdQ"/>
+                                <exclude reference="xTU-5T-rvA"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yke-dL-oCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,14 +162,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxH-od-LtF">
-                                <rect key="frame" x="36" y="550" width="47" height="30"/>
+                                <rect key="frame" x="31" y="550" width="47" height="30"/>
                                 <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="18"/>
                                 <state key="normal" title="Back!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UwU-H7-06e" kind="presentation" id="mix-Nx-NhW"/>
+                                    <segue destination="UwU-H7-06e" kind="presentation" modalTransitionStyle="flipHorizontal" id="mix-Nx-NhW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,7 +190,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="100" id="hsh-t5-C66"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HxH-od-LtF" secondAttribute="bottom" constant="10" id="pOA-13-P1i"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="100" id="wlK-nI-UdT"/>
-                            <constraint firstItem="HxH-od-LtF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="zS0-Bs-SJ5"/>
+                            <constraint firstItem="HxH-od-LtF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="zS0-Bs-SJ5"/>
                             <constraint firstItem="3QV-dj-01T" firstAttribute="top" secondItem="jRa-hi-Dq9" secondAttribute="bottom" constant="40" id="zU1-ek-cOS"/>
                             <constraint firstAttribute="centerX" secondItem="jIn-Rp-UZP" secondAttribute="centerX" id="zfH-Cv-oHz"/>
                         </constraints>

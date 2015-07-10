@@ -16,8 +16,6 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     @IBOutlet var secondLabel : SpringLabel!
     @IBOutlet var thirdLabel : SpringLabel!
     
-    var strArray : [String] = []
-    
     var myComposeView : SLComposeViewController!
     
     var item = [Dictionary<String, String>]()
@@ -59,21 +57,33 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         
         //NSURLConnectionを使いAPIを取得する
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler: response)
+        println("API取得するよー")
     }
     
     //取得したAPIデータの処理
     func response(res: NSURLResponse!, data: NSData!, error: NSError!){
         
+        println("何かしらのresponse返ってきたよー")
         
-        var parser : NSXMLParser? = NSXMLParser(data: data)
-        if parser != nil {
-            // NSXMLParserDelegateをセット
-            parser!.delegate = self;
-            parser!.parse()
+        if error != nil{
             
-        } else {
-            // パースに失敗した時
-            println("failed to parse XML")
+            //通信に失敗した時の処理
+            println("通信できてないよー")
+            
+        }else{
+            
+            //通信に成功した時の処理
+            var parser : NSXMLParser? = NSXMLParser(data: data)
+            if parser != nil {
+                // NSXMLParserDelegateをセット
+                println("パースの準備できたよー")
+                parser!.delegate = self;
+                parser!.parse()
+                println("パース終わって帰ってきたよー")
+            }else{
+                // パースに失敗した時
+                println("パース失敗したよー")
+            }
         }
         
     }
@@ -82,6 +92,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     {
         index = -1
         item = [Dictionary<String, String>]()
+        println("パース始まるよー")
     }
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject])
@@ -89,7 +100,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         parseKey = ""
         
         if elementName == "item" {
-            // Itemオブジェクトを保存するItems配列を初期化
+            // Itemオブジェクトを保存するItems辞書を初期化
             titleStr = ""
             item.append([
                 "title": ""
@@ -103,6 +114,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     func parser(parser: NSXMLParser, foundCharacters string: String?)
     {
         if index >= 0 {
+            //<title>の時だけ中身をitem辞書に入れていく
             if parseKey == "title" {
                 item[index]["title"] = item[index]["title"]! + string!
             }
@@ -120,6 +132,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         var y : Int
         var z : Int
         
+        // 同じ数が被らないように乱数を発生させる
         do {
         x = Int(arc4random_uniform(30))
         y = Int(arc4random_uniform(30))
@@ -129,6 +142,13 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         firstLabel.text = item[x]["title"]
         secondLabel.text = item[y]["title"]
         thirdLabel.text = item[z]["title"]
+        
+        //item辞書をNSUserDefaultsを使って保存
+        let saveItems = NSUserDefaults.standardUserDefaults()
+        saveItems.setObject(item, forKey: "title")
+        saveItems.synchronize()
+        println(saveItems)
+        println("パースが終わったよー")
     }
     
     

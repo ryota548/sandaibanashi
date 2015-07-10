@@ -24,6 +24,8 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     var titleStr = ""
     var index = -1
     
+    let saveItems = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -68,8 +70,14 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         if error != nil{
             
             //通信に失敗した時の処理
+            if saveItems.dictionaryForKey("title") != nil{
+                var items = saveItems.dictionaryForKey("title")
+                println(items)
+                println("読み込み成功！")
+               
+            }else{
             println("通信できてないよー")
-            
+            }
         }else{
             
             //通信に成功した時の処理
@@ -128,6 +136,8 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     
     func parserDidEndDocument(parser: NSXMLParser)
     {
+        println("パースが終わったよー")
+        
         var x : Int
         var y : Int
         var z : Int
@@ -143,12 +153,26 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         secondLabel.text = item[y]["title"]
         thirdLabel.text = item[z]["title"]
         
+        //空の配列を用意
+        var items: [String] = []
+        
         //item辞書をNSUserDefaultsを使って保存
-        let saveItems = NSUserDefaults.standardUserDefaults()
-        saveItems.setObject(item, forKey: "title")
+        saveItems.setObject(item, forKey: "itemTitle")
         saveItems.synchronize()
-        println(saveItems)
-        println("パースが終わったよー")
+        let names = saveItems.objectForKey("itemTitle") as? NSArray
+            // namesを参照可能
+            println(names)
+        //各名前を格納するための変数を宣言
+        var nameString:AnyObject
+        
+        //前回の保存内容が格納された配列の中身を一つずつ取り出す
+        for nameString in names!{
+            println(nameString)
+            //配列に追加していく
+            items.append(nameString["title"] as! String)
+        }
+        println(items)
+
     }
     
     

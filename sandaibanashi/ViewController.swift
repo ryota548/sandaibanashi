@@ -28,6 +28,8 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     //取ってきたものを一旦保存する用
     let saveItems = NSUserDefaults.standardUserDefaults()
     
+    var myActivityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -63,6 +65,9 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         //NSURLConnectionを使いAPIを取得する
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler: response)
         
+        //UIActivityIndicaterを動作させる
+        indicater()
+        
     }
     
     //取得したAPIデータの処理
@@ -97,6 +102,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         }
     }
     
+    //パースを開始する時
     func parserDidStartDocument(parser: NSXMLParser)
     {
         
@@ -105,6 +111,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         
     }
     
+    //要素の開始タグを読み込んだ時
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject])
     {
         
@@ -126,6 +133,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         }
     }
     
+    //タグの間の文字列を読み込んでいる時
     func parser(parser: NSXMLParser, foundCharacters string: String?)
     {
         
@@ -140,6 +148,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         }
     }
     
+    //要素の閉じタグを読み込んだ時
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
         
@@ -147,32 +156,32 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         
     }
     
+    //パースが終了した時
     func parserDidEndDocument(parser: NSXMLParser)
     {
-        
-        println("パースが終わったよー")
         
         saveItem()
         selectWord(item)
         
     }
     
+    //item辞書をNSUserDefaultsを使って保存
     func saveItem(){
         
-        //item辞書をNSUserDefaultsを使って保存
         saveItems.setObject(item, forKey: "itemTitle")
         saveItems.synchronize()
         
     }
     
+    //保存したものの取り出し
     func readItem() -> [Dictionary<String,String>]{
         
-        //保存したものの取り出し
         let names = saveItems.objectForKey("itemTitle") as? [Dictionary<String,String>]
         
         return names!
     }
     
+    //ラベルに表示させるものを選び、表示する
     func selectWord(dict : [Dictionary<String,String>]){
         
         var x : Int
@@ -189,6 +198,23 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         firstLabel.text = dict[x]["title"]
         secondLabel.text = dict[y]["title"]
         thirdLabel.text = dict[z]["title"]
+
+        myActivityIndicator.stopAnimating()
+    }
+    
+    //Indicatorの設定
+    func indicater(){
+        
+        myActivityIndicator = UIActivityIndicatorView()
+        myActivityIndicator.frame = CGRectMake(0, 0, 100, 100)
+        myActivityIndicator.center = self.view.center
+        myActivityIndicator.hidesWhenStopped = true
+        myActivityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        myActivityIndicator.color = UIColor.greenColor()
+        
+        myActivityIndicator.startAnimating()
+        
+        self.view.addSubview(myActivityIndicator)
 
     }
     

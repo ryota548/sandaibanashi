@@ -1,0 +1,6 @@
+framework module Pods_sandaibanashi {
+  umbrella header "Pods-sandaibanashi-umbrella.h"
+
+  export *
+  module * { export * }
+}

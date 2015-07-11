@@ -18,12 +18,14 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     
     var myComposeView : SLComposeViewController!
     
+    //　APIから取得したものを格納する用
     var item = [Dictionary<String, String>]()
     
     var parseKey = ""
     var titleStr = ""
     var index = -1
     
+    //取ってきたものを一旦保存する用
     let saveItems = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
@@ -31,6 +33,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         randomWord()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +43,6 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     
     @IBAction func tapRandom(){
         
-        
         firstLabel.animation = "swing"
         secondLabel.animation = "swing"
         thirdLabel.animation = "swing"
@@ -48,6 +50,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         secondLabel.animate()
         thirdLabel.animate()
         randomWord()
+        
     }
     
     //API取得の開始処理
@@ -59,84 +62,118 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         
         //NSURLConnectionを使いAPIを取得する
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler: response)
-        println("API取得するよー")
+        
     }
     
     //取得したAPIデータの処理
     func response(res: NSURLResponse!, data: NSData!, error: NSError!){
         
-        println("何かしらのresponse返ってきたよー")
-        
         if error != nil{
             
             //通信に失敗した時の処理
-            if saveItems.dictionaryForKey("title") != nil{
-                var items = saveItems.dictionaryForKey("title")
-                println(items)
-                println("読み込み成功！")
-               
-            }else{
-            println("通信できてないよー")
-            }
+            readItem()
+            //ランダムに３つ取り出す
+            selectWord(readItem())
+            
+            
         }else{
             
             //通信に成功した時の処理
             var parser : NSXMLParser? = NSXMLParser(data: data)
             if parser != nil {
                 // NSXMLParserDelegateをセット
-                println("パースの準備できたよー")
                 parser!.delegate = self;
                 parser!.parse()
-                println("パース終わって帰ってきたよー")
+                
             }else{
+                
                 // パースに失敗した時
-                println("パース失敗したよー")
+                readItem()
+                //ランダムに３つ取り出す
+                selectWord(readItem())
+                
+                
             }
         }
-        
     }
     
     func parserDidStartDocument(parser: NSXMLParser)
     {
+        
         index = -1
         item = [Dictionary<String, String>]()
-        println("パース始まるよー")
+        
     }
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject])
     {
+        
         parseKey = ""
         
         if elementName == "item" {
+            
             // Itemオブジェクトを保存するItems辞書を初期化
             titleStr = ""
             item.append([
                 "title": ""
                 ])
             index = item.count - 1
+            
         }else{
+            
             parseKey = elementName
+            
         }
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String?)
     {
+        
         if index >= 0 {
+            
             //<title>の時だけ中身をitem辞書に入れていく
             if parseKey == "title" {
+                
                 item[index]["title"] = item[index]["title"]! + string!
+                
             }
         }
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
+        
          parseKey = ""
+        
     }
     
     func parserDidEndDocument(parser: NSXMLParser)
     {
+        
         println("パースが終わったよー")
+        
+        saveItem()
+        selectWord(item)
+        
+    }
+    
+    func saveItem(){
+        
+        //item辞書をNSUserDefaultsを使って保存
+        saveItems.setObject(item, forKey: "itemTitle")
+        saveItems.synchronize()
+        
+    }
+    
+    func readItem() -> [Dictionary<String,String>]{
+        
+        //保存したものの取り出し
+        let names = saveItems.objectForKey("itemTitle") as? [Dictionary<String,String>]
+        
+        return names!
+    }
+    
+    func selectWord(dict : [Dictionary<String,String>]){
         
         var x : Int
         var y : Int
@@ -144,38 +181,16 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         
         // 同じ数が被らないように乱数を発生させる
         do {
-        x = Int(arc4random_uniform(30))
-        y = Int(arc4random_uniform(30))
-        z = Int(arc4random_uniform(30))
+            x = Int(arc4random_uniform(30))
+            y = Int(arc4random_uniform(30))
+            z = Int(arc4random_uniform(30))
         } while x == y || y == z || z == x
         
-        firstLabel.text = item[x]["title"]
-        secondLabel.text = item[y]["title"]
-        thirdLabel.text = item[z]["title"]
-        
-        //空の配列を用意
-        var items: [String] = []
-        
-        //item辞書をNSUserDefaultsを使って保存
-        saveItems.setObject(item, forKey: "itemTitle")
-        saveItems.synchronize()
-        let names = saveItems.objectForKey("itemTitle") as? NSArray
-            // namesを参照可能
-            println(names)
-        //各名前を格納するための変数を宣言
-        var nameString:AnyObject
-        
-        //前回の保存内容が格納された配列の中身を一つずつ取り出す
-        for nameString in names!{
-            println(nameString)
-            //配列に追加していく
-            items.append(nameString["title"] as! String)
-        }
-        println(items)
+        firstLabel.text = dict[x]["title"]
+        secondLabel.text = dict[y]["title"]
+        thirdLabel.text = dict[z]["title"]
 
     }
-    
-    
     
     
     @IBAction func tweetButton(){
@@ -189,6 +204,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         
         // myComposeViewの画面遷移.
         self.presentViewController(myComposeView, animated: true, completion: nil)
+        
     }
     
 }

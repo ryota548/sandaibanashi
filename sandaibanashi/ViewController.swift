@@ -19,13 +19,6 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     
     var myComposeView : SLComposeViewController!
     
-    //　APIから取得したものを格納する用
-    var item = [Dictionary<String, String>]()
-    
-    var parseKey = ""
-    var titleStr = ""
-    var index = -1
-    
     //取ってきたものを一旦保存する用
     let saveItems = NSUserDefaults.standardUserDefaults()
     
@@ -77,101 +70,40 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         if error != nil{
             
             //通信に失敗した時の処理
-            readItem()
             //ランダムに３つ取り出す
             selectWord(readItem())
             
         }else{
             
-           let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            println(str)
-            let xml = SWXMLHash.parse(str as! String)
-            println(xml["rss"]["channel"]["item"][0]["title"].element!.text!)
+            //通信に成功した時
+            var str = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            var xml = SWXMLHash.parse(str as! String)
+            saveItem(str!)
+            selectWord(xml)
         
         }
     }
-    
-    //パースを開始する時
-    func parserDidStartDocument(parser: NSXMLParser)
-    {
-        
-        index = -1
-        item = [Dictionary<String, String>]()
-        
-    }
-    
-    //要素の開始タグを読み込んだ時
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject])
-    {
-        
-        parseKey = ""
-        
-        if elementName == "item" {
-            
-            // Itemオブジェクトを保存するItems辞書を初期化
-            titleStr = ""
-            item.append([
-                "title": ""
-                ])
-            index = item.count - 1
-            
-        }else{
-            
-            parseKey = elementName
-            
-        }
-    }
-    
-    //タグの間の文字列を読み込んでいる時
-    func parser(parser: NSXMLParser, foundCharacters string: String?)
-    {
-        
-        if index >= 0 {
-            
-            //<title>の時だけ中身をitem辞書に入れていく
-            if parseKey == "title" {
-                
-                item[index]["title"] = item[index]["title"]! + string!
-                
-            }
-        }
-    }
-    
-    //要素の閉じタグを読み込んだ時
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
-    {
-        
-         parseKey = ""
-        
-    }
-    
-    //パースが終了した時
-    func parserDidEndDocument(parser: NSXMLParser)
-    {
-        
-        saveItem()
-        selectWord(item)
-        
-    }
-    
+
     //item辞書をNSUserDefaultsを使って保存
-    func saveItem(){
+    func saveItem(str : NSString){
         
-        saveItems.setObject(item, forKey: "itemTitle")
+        saveItems.setObject(str, forKey: "itemTitle")
         saveItems.synchronize()
         
     }
     
     //保存したものの取り出し
-    func readItem() -> [Dictionary<String,String>]{
+    func readItem() -> XMLIndexer {
         
-        let names = saveItems.objectForKey("itemTitle") as? [Dictionary<String,String>]
+        let names = saveItems.objectForKey("itemTitle") as? NSString
+        println(names)
+        var xml = SWXMLHash.parse(names! as! String)
         
-        return names!
+        return xml
     }
     
     //ラベルに表示させるものを選び、表示する
-    func selectWord(dict : [Dictionary<String,String>]){
+    func selectWord(xml : XMLIndexer){
         
         var x : Int
         var y : Int
@@ -184,9 +116,9 @@ class ViewController: UIViewController,NSXMLParserDelegate {
             z = Int(arc4random_uniform(30))
         } while x == y || y == z || z == x
         
-        firstLabel.text = dict[x]["title"]
-        secondLabel.text = dict[y]["title"]
-        thirdLabel.text = dict[z]["title"]
+        firstLabel.text = xml["rss"]["channel"]["item"][x]["title"].element!.text!
+        secondLabel.text = xml["rss"]["channel"]["item"][y]["title"].element!.text!
+        thirdLabel.text = xml["rss"]["channel"]["item"][z]["title"].element!.text!
 
         myActivityIndicator.stopAnimating()
     }

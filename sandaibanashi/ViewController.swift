@@ -9,6 +9,7 @@
 import UIKit
 import Accounts
 import Social
+import SWXMLHash
 
 class ViewController: UIViewController,NSXMLParserDelegate {
     
@@ -72,7 +73,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     
     //取得したAPIデータの処理
     func response(res: NSURLResponse!, data: NSData!, error: NSError!){
-        
+       
         if error != nil{
             
             //通信に失敗した時の処理
@@ -80,25 +81,13 @@ class ViewController: UIViewController,NSXMLParserDelegate {
             //ランダムに３つ取り出す
             selectWord(readItem())
             
-            
         }else{
             
-            //通信に成功した時の処理
-            var parser : NSXMLParser? = NSXMLParser(data: data)
-            if parser != nil {
-                // NSXMLParserDelegateをセット
-                parser!.delegate = self;
-                parser!.parse()
-                
-            }else{
-                
-                // パースに失敗した時
-                readItem()
-                //ランダムに３つ取り出す
-                selectWord(readItem())
-                
-                
-            }
+           let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            println(str)
+            let xml = SWXMLHash.parse(str as! String)
+            println(xml["rss"]["channel"]["item"][0]["title"].element!.text!)
+        
         }
     }
     

@@ -11,23 +11,27 @@ import Accounts
 import Social
 import SWXMLHash
 
-class ViewController: UIViewController,NSXMLParserDelegate {
+class ViewController: UIViewController{
     
+    //表示させるための3つのラベルを宣言
     @IBOutlet var firstLabel : SpringLabel!
     @IBOutlet var secondLabel : SpringLabel!
     @IBOutlet var thirdLabel : SpringLabel!
     
+    // SNS投稿画面の宣言
     var myComposeView : SLComposeViewController!
     
-    //取ってきたものを一旦保存する用
+    //xmlのテキストを一旦保存する用
     let saveItems = NSUserDefaults.standardUserDefaults()
     
+    //Indicatorの宣言
     var myActivityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //API取得の関数を呼ぶ
         randomWord()
         
     }
@@ -37,6 +41,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //ラベルにアニメーションをさせる、API取得の関数を呼ぶ
     @IBAction func tapRandom(){
         
         firstLabel.animation = "swing"
@@ -70,7 +75,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         if error != nil{
             
             //通信に失敗した時の処理
-            //ランダムに３つ取り出す
+            //保存していたxmlテキストを読み込み、ランダムに３つ取り出す
             selectWord(readItem())
             
         }else{
@@ -84,7 +89,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         }
     }
 
-    //item辞書をNSUserDefaultsを使って保存
+    //xmlのテキストをNSUserDefaultsを使って保存
     func saveItem(str : NSString){
         
         saveItems.setObject(str, forKey: "itemTitle")
@@ -95,8 +100,8 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     //保存したものの取り出し
     func readItem() -> XMLIndexer {
         
+        //保存していたxmlテキストを読み込み、XMLIndexerの型に変換
         let names = saveItems.objectForKey("itemTitle") as? NSString
-        println(names)
         var xml = SWXMLHash.parse(names! as! String)
         
         return xml
@@ -105,9 +110,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
     //ラベルに表示させるものを選び、表示する
     func selectWord(xml : XMLIndexer){
         
-        var x : Int
-        var y : Int
-        var z : Int
+        var x,y,z : Int
         
         // 同じ数が被らないように乱数を発生させる
         do {
@@ -120,6 +123,7 @@ class ViewController: UIViewController,NSXMLParserDelegate {
         secondLabel.text = xml["rss"]["channel"]["item"][y]["title"].element!.text!
         thirdLabel.text = xml["rss"]["channel"]["item"][z]["title"].element!.text!
 
+        //Indicatorを止める
         myActivityIndicator.stopAnimating()
     }
     

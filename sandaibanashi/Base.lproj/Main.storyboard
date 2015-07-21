@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UwU-H7-06e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qwq-dt-5L2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="font_1_honokamarugo_1.1.ttf">
+            <string>Honoka-Maru-Gothic</string>
+            <string>Honoka-Maru-Gothic</string>
+            <string>Honoka-Maru-Gothic</string>
+            <string>Honoka-Maru-Gothic</string>
+            <string>Honoka-Maru-Gothic</string>
             <string>Honoka-Maru-Gothic</string>
             <string>Honoka-Maru-Gothic</string>
             <string>Honoka-Maru-Gothic</string>
@@ -31,27 +36,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQz-os-4rK">
-                                <rect key="frame" x="259" y="458" width="82" height="42"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="30"/>
-                                <state key="normal" title="Try it!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="Vfx-O9-HnD"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三題噺ジェネレーター" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-hk-gib">
-                                <rect key="frame" x="154" y="120" width="292" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Word Challenge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-hk-gib">
+                                <rect key="frame" x="170" y="164" width="261" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QQD-9y-h4h"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pge-Ib-dyM">
-                                <rect key="frame" x="243" y="346" width="115" height="32"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
-                                <state key="normal" title="三題噺とは？">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="164" y="289" width="273" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EOT-0c-VyQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
+                                <state key="normal" title="3 Word Challengeとは？">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -59,9 +60,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZJ-FY-hRP">
-                                <rect key="frame" x="244" y="386" width="113" height="32"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
+                                <rect key="frame" x="230" y="369" width="141" height="37"/>
+                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
                                 <state key="normal" title="オチのつけ方">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -69,34 +71,26 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.6588235294117647" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.054901960784313725" green="0.47843137254901963" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="PQz-os-4rK" secondAttribute="centerX" id="6Uc-m5-N41"/>
-                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="JZJ-FY-hRP" secondAttribute="bottom" constant="40" id="OsJ-Ss-pEz"/>
-                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="150" id="Oz4-0Y-8Ex"/>
-                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="200" id="eEw-Pf-Pdb"/>
+                            <constraint firstItem="drA-gH-LdY" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="40" id="L6t-xV-JIi"/>
                             <constraint firstAttribute="centerX" secondItem="JZJ-FY-hRP" secondAttribute="centerX" id="haR-7R-G6K"/>
-                            <constraint firstItem="drA-gH-LdY" firstAttribute="top" secondItem="PQz-os-4rK" secondAttribute="bottom" constant="100" id="i7x-Ti-O7x"/>
-                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="100" id="osE-i4-xdQ"/>
+                            <constraint firstItem="JZJ-FY-hRP" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="40" id="hpH-9V-eie"/>
                             <constraint firstAttribute="centerX" secondItem="rgs-hk-gib" secondAttribute="centerX" id="pFA-mo-amW"/>
-                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="80" id="s2r-kF-ymV"/>
                             <constraint firstAttribute="centerX" secondItem="Pge-Ib-dyM" secondAttribute="centerX" id="udU-5A-k9l"/>
                             <constraint firstItem="rgs-hk-gib" firstAttribute="top" secondItem="xNX-K4-OOu" secondAttribute="bottom" constant="100" id="xK3-gw-dU4"/>
-                            <constraint firstItem="PQz-os-4rK" firstAttribute="top" secondItem="Pge-Ib-dyM" secondAttribute="bottom" constant="70" id="xTU-5T-rvA"/>
+                            <constraint firstItem="drA-gH-LdY" firstAttribute="top" secondItem="JZJ-FY-hRP" secondAttribute="bottom" constant="150" id="zTQ-Jm-poo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Oz4-0Y-8Ex"/>
-                                <exclude reference="eEw-Pf-Pdb"/>
-                                <exclude reference="osE-i4-xdQ"/>
-                                <exclude reference="xTU-5T-rvA"/>
+                                <exclude reference="L6t-xV-JIi"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yke-dL-oCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-211" y="60"/>
+            <point key="canvasLocation" x="891" y="710"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -111,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QV-dj-01T" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
-                                <rect key="frame" x="274" y="190" width="52" height="20"/>
+                                <rect key="frame" x="274" y="234" width="52" height="20"/>
                                 <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -121,9 +115,9 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIn-Rp-UZP">
-                                <rect key="frame" x="273" y="286" width="55" height="29"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="17"/>
-                                <state key="normal" title="Shake!">
+                                <rect key="frame" x="214" y="282" width="172" height="37"/>
+                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
+                                <state key="normal" title="Word Shafulle!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -132,7 +126,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRa-hi-Dq9" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
-                                <rect key="frame" x="274" y="130" width="52" height="20"/>
+                                <rect key="frame" x="274" y="174" width="52" height="20"/>
                                 <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -142,7 +136,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-Vt-1uq" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
-                                <rect key="frame" x="274" y="70" width="52" height="20"/>
+                                <rect key="frame" x="274" y="114" width="52" height="20"/>
                                 <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -151,46 +145,53 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここに文章を書いてください。【Post!】を押すと投稿されます。" translatesAutoresizingMaskIntoConstraints="NO" id="Xac-G2-wsR">
+                                <rect key="frame" x="36" y="319" width="528" height="100"/>
+                                <color key="backgroundColor" red="0.25098039215686274" green="0.66666666666666663" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8bi-5b-CoL"/>
+                                    <constraint firstAttribute="width" constant="400" id="IyS-2c-uPZ"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IyS-2c-uPZ"/>
+                                    </mask>
+                                </variation>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmR-Sl-ejN">
-                                <rect key="frame" x="263" y="463" width="75" height="37"/>
+                                <rect key="frame" x="270" y="449" width="61" height="37"/>
                                 <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
-                                <state key="normal" title="Think!">
+                                <state key="normal" title="Post!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="tweetButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADY-EF-kkQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxH-od-LtF">
-                                <rect key="frame" x="31" y="550" width="47" height="30"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="18"/>
-                                <state key="normal" title="Back!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UwU-H7-06e" kind="presentation" modalTransitionStyle="flipHorizontal" id="mix-Nx-NhW"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.054901960784313725" green="0.47843137254901963" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Xac-G2-wsR" secondAttribute="centerX" id="3Ie-8y-zek"/>
                             <constraint firstAttribute="centerY" secondItem="jIn-Rp-UZP" secondAttribute="centerY" id="BkR-Yh-mQi"/>
                             <constraint firstItem="jRa-hi-Dq9" firstAttribute="top" secondItem="aO8-Vt-1uq" secondAttribute="bottom" constant="40" id="CHe-l7-Do1"/>
                             <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="F0z-t4-Sf3"/>
                             <constraint firstAttribute="centerX" secondItem="aO8-Vt-1uq" secondAttribute="centerX" id="Fm1-Cy-AYv"/>
+                            <constraint firstItem="Xac-G2-wsR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Fzz-W5-ay8"/>
                             <constraint firstAttribute="centerX" secondItem="3QV-dj-01T" secondAttribute="centerX" id="IKW-SR-NMj"/>
                             <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="Le6-10-j1B"/>
                             <constraint firstAttribute="centerY" secondItem="QmR-Sl-ejN" secondAttribute="centerY" id="Of7-ja-5Lf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HxH-od-LtF" secondAttribute="bottom" constant="20" id="P2U-zA-Yex"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xac-G2-wsR" secondAttribute="trailing" constant="20" id="TUv-nV-8Sc"/>
                             <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="ThG-JD-kY1"/>
                             <constraint firstAttribute="centerX" secondItem="jRa-hi-Dq9" secondAttribute="centerX" id="VEz-Jn-ayh"/>
+                            <constraint firstItem="QmR-Sl-ejN" firstAttribute="top" secondItem="Xac-G2-wsR" secondAttribute="bottom" constant="30" id="WB9-9U-z1T"/>
                             <constraint firstItem="aO8-Vt-1uq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="bID-fV-sjY"/>
-                            <constraint firstItem="HxH-od-LtF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="h1d-Rf-6XB"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="100" id="hsh-t5-C66"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HxH-od-LtF" secondAttribute="bottom" constant="10" id="pOA-13-P1i"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="70" id="hsh-t5-C66"/>
+                            <constraint firstItem="Xac-G2-wsR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="oSE-2l-7h7"/>
+                            <constraint firstItem="Xac-G2-wsR" firstAttribute="top" secondItem="jIn-Rp-UZP" secondAttribute="bottom" constant="20" id="rbA-dy-Voq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="100" id="wlK-nI-UdT"/>
-                            <constraint firstItem="HxH-od-LtF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="zS0-Bs-SJ5"/>
                             <constraint firstItem="3QV-dj-01T" firstAttribute="top" secondItem="jRa-hi-Dq9" secondAttribute="bottom" constant="40" id="zU1-ek-cOS"/>
                             <constraint firstAttribute="centerX" secondItem="jIn-Rp-UZP" secondAttribute="centerX" id="zfH-Cv-oHz"/>
                         </constraints>
@@ -200,11 +201,11 @@
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Fzz-W5-ay8"/>
+                                <exclude reference="rbA-dy-Voq"/>
                                 <exclude reference="Le6-10-j1B"/>
                                 <exclude reference="Of7-ja-5Lf"/>
                                 <exclude reference="ThG-JD-kY1"/>
-                                <exclude reference="h1d-Rf-6XB"/>
-                                <exclude reference="pOA-13-P1i"/>
                                 <exclude reference="wlK-nI-UdT"/>
                             </mask>
                         </variation>
@@ -213,11 +214,192 @@
                         <outlet property="firstLabel" destination="aO8-Vt-1uq" id="2SB-hf-JaT"/>
                         <outlet property="secondLabel" destination="jRa-hi-Dq9" id="5r8-dn-QqJ"/>
                         <outlet property="thirdLabel" destination="3QV-dj-01T" id="YXN-wG-hEc"/>
+                        <outlet property="tweetTextView" destination="Xac-G2-wsR" id="VpL-O4-li7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511" y="60"/>
+            <point key="canvasLocation" x="891" y="1404"/>
+        </scene>
+        <!--3 Word Challenge-->
+        <scene sceneID="D6G-7g-gfS">
+            <objects>
+                <tableViewController id="Qt1-js-feL" customClass="TimelineTableViewController" customModule="sandaibanashi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="22" sectionFooterHeight="22" id="4si-Hl-QED">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログインしていません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jeX-cl-2rb">
+                            <rect key="frame" x="0.0" y="-21" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.054901960780000002" green="0.47843137250000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="143" id="qbq-KL-f1D" customClass="TweetTableViewCell" customModule="sandaibanashi" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qbq-KL-f1D" id="5Sy-S5-Mx7">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKv-sJ-Iaq">
+                                            <rect key="frame" x="82" y="33" width="39" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="Ojz-JU-FOX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Ojz-JU-FOX"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-lI-cAm">
+                                            <rect key="frame" x="18" y="13" width="36" height="17"/>
+                                            <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cno-bY-QnX">
+                                            <rect key="frame" x="523" y="13" width="29" height="14"/>
+                                            <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TI-o4-6hb">
+                                            <rect key="frame" x="18" y="33" width="39" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="IGV-gu-xUC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="IGV-gu-xUC"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve9-Za-vHR">
+                                            <rect key="frame" x="18" y="64" width="534" height="65"/>
+                                            <color key="backgroundColor" red="0.25098039215686274" green="0.66666666666666663" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="Q3k-lI-H9U"/>
+                                                <constraint firstAttribute="width" constant="500" id="nCv-9b-vF0"/>
+                                            </constraints>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="nCv-9b-vF0"/>
+                                                </mask>
+                                            </variation>
+                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWP-QO-VZL">
+                                            <rect key="frame" x="146" y="33" width="39" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="h4o-mP-OP4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="h4o-mP-OP4"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.054901960780000002" green="0.47843137250000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="8TI-o4-6hb" firstAttribute="top" secondItem="5Sy-S5-Mx7" secondAttribute="topMargin" constant="25" id="0nW-bf-9QI"/>
+                                        <constraint firstItem="6J0-lI-cAm" firstAttribute="top" secondItem="5Sy-S5-Mx7" secondAttribute="topMargin" constant="5" id="4m4-0Y-Zsa"/>
+                                        <constraint firstAttribute="centerX" secondItem="ve9-Za-vHR" secondAttribute="centerX" constant="3" id="5uO-jl-adk"/>
+                                        <constraint firstItem="JKv-sJ-Iaq" firstAttribute="top" secondItem="5Sy-S5-Mx7" secondAttribute="topMargin" constant="25" id="BOG-ec-Mem"/>
+                                        <constraint firstItem="8TI-o4-6hb" firstAttribute="leading" secondItem="5Sy-S5-Mx7" secondAttribute="leadingMargin" constant="10" id="C4h-nm-lug"/>
+                                        <constraint firstItem="FWP-QO-VZL" firstAttribute="leading" secondItem="JKv-sJ-Iaq" secondAttribute="trailing" constant="25" id="Fvj-ph-MPN"/>
+                                        <constraint firstItem="FWP-QO-VZL" firstAttribute="top" secondItem="5Sy-S5-Mx7" secondAttribute="topMargin" constant="25" id="KK1-8p-9E9"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ve9-Za-vHR" secondAttribute="bottom" constant="7" id="N1O-ue-0rk"/>
+                                        <constraint firstItem="Cno-bY-QnX" firstAttribute="top" secondItem="5Sy-S5-Mx7" secondAttribute="topMargin" constant="5" id="O4H-dC-bOS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Cno-bY-QnX" secondAttribute="trailing" constant="40" id="REf-zv-r1l"/>
+                                        <constraint firstAttribute="centerY" secondItem="ve9-Za-vHR" secondAttribute="centerY" constant="-11" id="UVV-mP-Wlx"/>
+                                        <constraint firstItem="Cno-bY-QnX" firstAttribute="top" secondItem="5Sy-S5-Mx7" secondAttribute="topMargin" constant="5" id="ZHA-Es-URJ"/>
+                                        <constraint firstAttribute="centerX" secondItem="ve9-Za-vHR" secondAttribute="centerX" constant="3" id="ZLA-Hn-g24"/>
+                                        <constraint firstItem="ve9-Za-vHR" firstAttribute="leading" secondItem="5Sy-S5-Mx7" secondAttribute="leadingMargin" constant="10" id="Zut-Jf-26L"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ve9-Za-vHR" secondAttribute="trailing" constant="40" id="dsm-tu-okF"/>
+                                        <constraint firstAttribute="centerX" secondItem="ve9-Za-vHR" secondAttribute="centerX" id="g9g-6q-Dry"/>
+                                        <constraint firstItem="6J0-lI-cAm" firstAttribute="leading" secondItem="5Sy-S5-Mx7" secondAttribute="leadingMargin" constant="10" id="h8N-Cz-5gn"/>
+                                        <constraint firstItem="JKv-sJ-Iaq" firstAttribute="leading" secondItem="8TI-o4-6hb" secondAttribute="trailing" constant="25" id="ly8-Mf-ahL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ve9-Za-vHR" secondAttribute="bottom" constant="5" id="yNk-rh-Ivs"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="5uO-jl-adk"/>
+                                            <exclude reference="N1O-ue-0rk"/>
+                                            <exclude reference="UVV-mP-Wlx"/>
+                                            <exclude reference="ZLA-Hn-g24"/>
+                                            <exclude reference="g9g-6q-Dry"/>
+                                            <exclude reference="O4H-dC-bOS"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.054901960784313725" green="0.47843137254901963" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="firstLabel" destination="8TI-o4-6hb" id="koL-A8-3YK"/>
+                                    <outlet property="secondLabel" destination="JKv-sJ-Iaq" id="nyT-Ao-Y4F"/>
+                                    <outlet property="thirdLabel" destination="FWP-QO-VZL" id="JC9-le-Sal"/>
+                                    <outlet property="timestampLabel" destination="Cno-bY-QnX" id="KB2-Tu-1f4"/>
+                                    <outlet property="tweetTextView" destination="ve9-Za-vHR" id="cQB-Bp-LTd"/>
+                                    <outlet property="usernameLabel" destination="6J0-lI-cAm" id="cfJ-uz-mmI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qt1-js-feL" id="5sQ-vE-pho"/>
+                            <outlet property="delegate" destination="Qt1-js-feL" id="S1O-Mv-Dsw"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="3 Word Challenge" id="MK6-u8-h48">
+                        <barButtonItem key="leftBarButtonItem" title="はじめに" id="jYr-ka-fDJ">
+                            <connections>
+                                <segue destination="UwU-H7-06e" kind="show" id="7x2-X9-rp6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="投稿！" id="NgD-vP-njE">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="iQk-su-haw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="currentUserName" destination="jeX-cl-2rb" id="ahd-p4-GCh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oB-DD-3sd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147" y="1028"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aaT-jX-CCl">
+            <objects>
+                <navigationController id="Qwq-dt-5L2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UT5-Hd-ahl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qt1-js-feL" kind="relationship" relationship="rootViewController" id="Dkj-s5-4TW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHK-50-TzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="1022"/>
         </scene>
     </scenes>
 </document>

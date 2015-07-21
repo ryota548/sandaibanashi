@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class startViewController: UIViewController {
     
@@ -15,13 +16,17 @@ class startViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //概要
     @IBAction func setumei(sender: UIButton){
-        let alertController = UIAlertController(title: "三題噺(さんだいばなし)？", message: "落語の形態の一つで，観客に適当な言葉・題目を出させ，出された題目3つを折り込んで即興で演じる落語である．\n一つを「オチ」に使わないといけない．", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "3 Word Challenge？", message: "落語の形態の一つで，観客に適当な言葉・題目を出させ，出された題目3つを折り込んで即興で演じる落語である．\n一つを「オチ」に使わないといけない．", preferredStyle: .Alert)
         
         let defaultAction = UIAlertAction(title: "OK!", style: .Default, handler: nil)
         alertController.addAction(defaultAction)
@@ -30,6 +35,8 @@ class startViewController: UIViewController {
     
     }
     
+    
+    //オチのつけかた
     @IBAction func ochi(sender: UIButton){
         let alertController = UIAlertController(title: "オチの種類", message: "「どんでん返し」\n最後の最後でストーリーをひっくり返す.\n「タネ明かし」\n最後の最後でネタばらしをする.いかに意外性を持たせるか.", preferredStyle: .Alert)
         

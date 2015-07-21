@@ -10,6 +10,7 @@ import UIKit
 import Accounts
 import Social
 import SWXMLHash
+import Parse
 
 class ViewController: UIViewController{
     
@@ -18,14 +19,16 @@ class ViewController: UIViewController{
     @IBOutlet var secondLabel : SpringLabel!
     @IBOutlet var thirdLabel : SpringLabel!
     
-    // SNS投稿画面の宣言
-    var myComposeView : SLComposeViewController!
-    
     //xmlのテキストを一旦保存する用
     let saveItems = NSUserDefaults.standardUserDefaults()
     
     //Indicatorの宣言
     var myActivityIndicator: UIActivityIndicatorView!
+    
+    //投稿内容
+    @IBOutlet var tweetTextView: UITextView! = UITextView()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +39,14 @@ class ViewController: UIViewController{
         
     }
     
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     //ラベルにアニメーションをさせる、API取得の関数を呼ぶ
     @IBAction func tapRandom(){
@@ -53,6 +60,8 @@ class ViewController: UIViewController{
         randomWord()
         
     }
+    
+    
     
     //API取得の開始処理
     func randomWord(){
@@ -69,15 +78,20 @@ class ViewController: UIViewController{
         
     }
     
+    
+    
     //取得したAPIデータの処理
     func response(res: NSURLResponse!, data: NSData!, error: NSError!){
-       
+        
         if error != nil{
             
             //通信に失敗した時の処理
             //保存していたxmlテキストを読み込み、ランダムに３つ取り出す
+            if saveItems.objectForKey("itemTitle") != nil{
             selectWord(readItem())
-            
+            }else{
+                println("いけてないやーつ")
+            }
         }else{
             
             //通信に成功した時
@@ -85,10 +99,12 @@ class ViewController: UIViewController{
             var xml = SWXMLHash.parse(str as! String)
             saveItem(str!)
             selectWord(xml)
-        
+            
         }
     }
-
+    
+    
+    
     //xmlのテキストをNSUserDefaultsを使って保存
     func saveItem(str : NSString){
         
@@ -96,6 +112,8 @@ class ViewController: UIViewController{
         saveItems.synchronize()
         
     }
+    
+    
     
     //保存したものの取り出し
     func readItem() -> XMLIndexer {
@@ -106,6 +124,8 @@ class ViewController: UIViewController{
         
         return xml
     }
+    
+    
     
     //ラベルに表示させるものを選び、表示する
     func selectWord(xml : XMLIndexer){
@@ -119,13 +139,16 @@ class ViewController: UIViewController{
             z = Int(arc4random_uniform(30))
         } while x == y || y == z || z == x
         
+        //XMLの要素を取得しラベルへつっこむ
         firstLabel.text = xml["rss"]["channel"]["item"][x]["title"].element!.text!
         secondLabel.text = xml["rss"]["channel"]["item"][y]["title"].element!.text!
         thirdLabel.text = xml["rss"]["channel"]["item"][z]["title"].element!.text!
-
+        
         //Indicatorを止める
         myActivityIndicator.stopAnimating()
     }
+    
+    
     
     //Indicatorの設定
     func indicater(){
@@ -137,26 +160,35 @@ class ViewController: UIViewController{
         myActivityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
         myActivityIndicator.color = UIColor.greenColor()
         
+        //Indicatorのアニメーションスタート
         myActivityIndicator.startAnimating()
         
         self.view.addSubview(myActivityIndicator)
-
+        
     }
+    
     
     
     @IBAction func tweetButton(){
         
-        // SLComposeViewControllerのインスタンス化.
-        // ServiceTypeをTwitterに指定.
-        myComposeView = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        // Tweetする内容を保存する用のクラス
+        var tweet:PFObject = PFObject(className: "Tweets")
         
-        // 投稿するテキストを指定.
-        myComposeView.setInitialText("Twitter Test from Swift #三題噺 #\(firstLabel.text!) #\(secondLabel.text!) #\(thirdLabel.text!)")
+        // ユーザーとTweet内容、３つのラベル用のカラムを作成。
+        tweet["content"] = tweetTextView.text
+        tweet["tweeter"] = PFUser.currentUser()
+        tweet["first"] = firstLabel.text
+        tweet["second"] = secondLabel.text
+        tweet["third"] = thirdLabel.text
         
-        // myComposeViewの画面遷移.
-        self.presentViewController(myComposeView, animated: true, completion: nil)
         
+        // Parseに送信
+        tweet.saveInBackground()
+        
+        // Tweet一覧が表示されるTimelineTableViewControllerに戻る
+        self.navigationController!.popToRootViewControllerAnimated(true)
     }
-    
+
+
 }
 

@@ -160,6 +160,9 @@
                                         <exclude reference="IyS-2c-uPZ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kuD-ir-SCB"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmR-Sl-ejN">
                                 <rect key="frame" x="270" y="449" width="61" height="37"/>
@@ -173,6 +176,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.054901960784313725" green="0.47843137254901963" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Xac-G2-wsR" secondAttribute="centerX" id="3Ie-8y-zek"/>
                             <constraint firstAttribute="centerY" secondItem="jIn-Rp-UZP" secondAttribute="centerY" id="BkR-Yh-mQi"/>
@@ -209,6 +213,9 @@
                                 <exclude reference="wlK-nI-UdT"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BOL-6j-J4A" appends="YES" id="NHD-54-z0g"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="firstLabel" destination="aO8-Vt-1uq" id="2SB-hf-JaT"/>
@@ -218,6 +225,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BOL-6j-J4A">
+                    <connections>
+                        <action selector="tapScreen:" destination="BYZ-38-t0r" id="2pC-DV-hI1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="891" y="1404"/>
         </scene>

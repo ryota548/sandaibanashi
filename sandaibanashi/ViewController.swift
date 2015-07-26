@@ -12,7 +12,7 @@ import Social
 import SWXMLHash
 import Parse
 
-class ViewController: UIViewController{
+class ViewController: UIViewController,UITextViewDelegate{
     
     //表示させるための3つのラベルを宣言
     @IBOutlet var firstLabel : SpringLabel!
@@ -27,8 +27,7 @@ class ViewController: UIViewController{
     
     //投稿内容
     @IBOutlet var tweetTextView: UITextView! = UITextView()
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +43,12 @@ class ViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    @IBAction func tapScreen(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     

@@ -41,18 +41,15 @@ class ViewController: UIViewController,UITextViewDelegate{
     }
     
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-    
     @IBAction func tapScreen(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
-    
     
     
     //ラベルにアニメーションをさせる、API取得の関数を呼ぶ
@@ -68,48 +65,36 @@ class ViewController: UIViewController,UITextViewDelegate{
         
     }
     
-    
-    
+
     //API取得の開始処理
     func randomWord(){
         
         let kizashiUrl = NSURL(string:"http://kizasi.jp/kizapi.py?type=rank")
-        let req = NSURLRequest(URL: kizashiUrl!)
-        let connection: NSURLConnection = NSURLConnection(request: req, delegate: self, startImmediately: false)!
-        
+        let session: NSURLSession = NSURLSession(configuration: NSURLSessionConfiguration())
         //NSURLConnectionを使いAPIを取得する
-        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler: response)
-        
+        let task = session.dataTaskWithURL(kizashiUrl!, completionHandler: {
+            (data, res, error) in
+            
+            if error != nil{
+                //通信に失敗した時の処理
+                //保存していたxmlテキストを読み込み、ランダムに３つ取り出す
+                if self.saveItems.objectForKey("itemTitle") != nil{
+                    self.selectWord(self.readItem())
+                }else{
+                    print("いけてないやーつ")
+                }
+            }else{
+                //通信に成功した時
+                let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                let xml = SWXMLHash.parse(str as! String)
+                self.saveItem(str!)
+                self.selectWord(xml)
+            }
+        })
         //UIActivityIndicaterを動作させる
         indicater()
-        
+        task.resume()
     }
-    
-    
-    
-    //取得したAPIデータの処理
-    func response(res: NSURLResponse!, data: NSData!, error: NSError!){
-        
-        if error != nil{
-            
-            //通信に失敗した時の処理
-            //保存していたxmlテキストを読み込み、ランダムに３つ取り出す
-            if saveItems.objectForKey("itemTitle") != nil{
-            selectWord(readItem())
-            }else{
-                print("いけてないやーつ")
-            }
-        }else{
-            
-            //通信に成功した時
-            var str = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            var xml = SWXMLHash.parse(str as! String)
-            saveItem(str!)
-            selectWord(xml)
-            
-        }
-    }
-    
     
     
     //xmlのテキストをNSUserDefaultsを使って保存
@@ -121,17 +106,15 @@ class ViewController: UIViewController,UITextViewDelegate{
     }
     
     
-    
     //保存したものの取り出し
     func readItem() -> XMLIndexer {
         
         //保存していたxmlテキストを読み込み、XMLIndexerの型に変換
         let names = saveItems.objectForKey("itemTitle") as? NSString
-        var xml = SWXMLHash.parse(names! as! String)
+        let xml = SWXMLHash.parse(names! as String)
         
         return xml
     }
-    
     
     
     //ラベルに表示させるものを選び、表示する
@@ -156,7 +139,6 @@ class ViewController: UIViewController,UITextViewDelegate{
     }
     
     
-    
     //Indicatorの設定
     func indicater(){
         
@@ -173,7 +155,6 @@ class ViewController: UIViewController,UITextViewDelegate{
         self.view.addSubview(myActivityIndicator)
         
     }
-    
     
     
     @IBAction func tweetButton(){

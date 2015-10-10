@@ -19,9 +19,6 @@ class TimelineTableViewController: UITableViewController {
     
     @IBOutlet var currentUserName : UILabel!
     
-    
-    
-    
     // Parseからデータの取得
     func loadData(){
         timelineData.removeAllObjects()
@@ -120,7 +117,6 @@ class TimelineTableViewController: UITableViewController {
     }
     
     
-    
     //サインイン
     func signIn(username:NSString, password:NSString) {
         
@@ -136,7 +132,6 @@ class TimelineTableViewController: UITableViewController {
             }
         }
     }
-    
     
     
     //サインアップ
@@ -158,13 +153,9 @@ class TimelineTableViewController: UITableViewController {
     }
     
     
-    
-    
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
-    
-    
     
     
     //テーブルビューのセクションの数
@@ -173,14 +164,10 @@ class TimelineTableViewController: UITableViewController {
     }
     
     
-    
-    
     //tweetの数だけrowを返す
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timelineData.count
     }
-    
-    
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -233,7 +220,6 @@ class TimelineTableViewController: UITableViewController {
         
         return cell
     }
-    
     
     
     //Indicatorの設定

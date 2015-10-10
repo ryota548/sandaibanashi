@@ -343,6 +343,8 @@
 		6F1B14121B1DFD9A00864755 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "ryota-ko";
 				TargetAttributes = {

@@ -30,7 +30,7 @@ class TimelineTableViewController: UITableViewController {
         indicater()
         
         // Tweetsテーブルを呼び出す
-        var findTimelineData:PFQuery = PFQuery(className: "Tweets")
+        let findTimelineData:PFQuery = PFQuery(className: "Tweets")
         
         
         findTimelineData.findObjectsInBackgroundWithBlock{
@@ -56,7 +56,7 @@ class TimelineTableViewController: UITableViewController {
         //ログインされているかどうかを確かめる
         if ((PFUser.currentUser()) == nil) {
             self.currentUserName.text = "ログインできていません"
-            var loginAlert:UIAlertController = UIAlertController(title: "Sign UP / Loign", message: "Plase sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
+            let loginAlert:UIAlertController = UIAlertController(title: "Sign UP / Loign", message: "Plase sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
             
             // ユーザーネームとパスワードの入力
             loginAlert.addTextFieldWithConfigurationHandler({
@@ -78,14 +78,14 @@ class TimelineTableViewController: UITableViewController {
                 let passwordTextfield:UITextField = textFields.objectAtIndex(1) as! UITextField
                 
                 // ここでtweeterをユーザーの変数として作成
-                var tweeter:PFUser = PFUser()
+                let tweeter:PFUser = PFUser()
                 
                 // UITextFieldに入力された内容を代入
                 tweeter.username = usernameTextfield.text
                 tweeter.password = passwordTextfield.text
                 
                 //存在するユーザーかチェック
-                var checkExist = PFUser.query()
+                let checkExist = PFUser.query()
                 // usernameをキーにして検索
                 checkExist!.whereKey("username", equalTo: tweeter.username!)
                 checkExist!.findObjectsInBackgroundWithBlock {
@@ -93,13 +93,13 @@ class TimelineTableViewController: UITableViewController {
                     
                     if(objects!.count > 0){
                         
-                        println("its username is already taken \(objects!.count)")
+                        print("its username is already taken \(objects!.count)")
                         //すでにあるユーザーでログイン
                         self.signIn(tweeter.username!, password:tweeter.password!)
                         
                     } else {
                         
-                        println("its username hasn't token yet. Let's register!")
+                        print("its username hasn't token yet. Let's register!")
                         //あらたにログイン
                         self.signUp(tweeter)
                         
@@ -128,10 +128,10 @@ class TimelineTableViewController: UITableViewController {
             (user: PFUser?, error: NSError?) -> Void in
             
             if user != nil{
-                println("existed user")
+                print("existed user")
                 
             } else {
-                println("not existed user")
+                print("not existed user")
                 
             }
         }
@@ -147,11 +147,11 @@ class TimelineTableViewController: UITableViewController {
             (success:Bool, error:NSError?)->Void in
             
             if !(error != nil){
-                println("Sign up succeeded.")
+                print("Sign up succeeded.")
                 
             }else{
-                let errorString = error!.userInfo?["error"] as? NSString
-                println(errorString)
+                let errorString = error!.userInfo["error"] as? NSString
+                print(errorString)
                 
             }
         }
@@ -160,7 +160,7 @@ class TimelineTableViewController: UITableViewController {
     
     
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -203,12 +203,12 @@ class TimelineTableViewController: UITableViewController {
         cell.thirdLabel.text = tweet.objectForKey("third") as? String
         
         //投稿日時の取得フォーマットを指定して取得
-        var dataFormatter:NSDateFormatter = NSDateFormatter()
+        let dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         cell.timestampLabel.text = dataFormatter.stringFromDate(tweet.createdAt!)
         
         // objectIdをforeignKeyとして、user(tweeter)を取得
-        var findTweeter:PFQuery = PFUser.query()!
+        let findTweeter:PFQuery = PFUser.query()!
         findTweeter.whereKey("objectId", equalTo: tweet.objectForKey("tweeter")!.objectId!!)
         
         findTweeter.findObjectsInBackgroundWithBlock{

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qwq-dt-5L2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qwq-dt-5L2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -145,7 +146,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここに文章を書いてください。【Post!】を押すと投稿されます。" translatesAutoresizingMaskIntoConstraints="NO" id="Xac-G2-wsR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="ここに文章を書いてください。【Post!】を押すと投稿されます。" translatesAutoresizingMaskIntoConstraints="NO" id="Xac-G2-wsR">
                                 <rect key="frame" x="36" y="319" width="528" height="100"/>
                                 <color key="backgroundColor" red="0.25098039215686274" green="0.66666666666666663" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -174,11 +175,15 @@
                                     <action selector="tweetButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADY-EF-kkQ"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kFc-4N-3Pe">
+                                <rect key="frame" x="0.0" y="6" width="600" height="594"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.054901960784313725" green="0.47843137254901963" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Xac-G2-wsR" secondAttribute="centerX" id="3Ie-8y-zek"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kFc-4N-3Pe" secondAttribute="trailing" constant="-16" id="53s-Nd-IVY"/>
                             <constraint firstAttribute="centerY" secondItem="jIn-Rp-UZP" secondAttribute="centerY" id="BkR-Yh-mQi"/>
                             <constraint firstItem="jRa-hi-Dq9" firstAttribute="top" secondItem="aO8-Vt-1uq" secondAttribute="bottom" constant="40" id="CHe-l7-Do1"/>
                             <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="F0z-t4-Sf3"/>
@@ -193,8 +198,11 @@
                             <constraint firstItem="QmR-Sl-ejN" firstAttribute="top" secondItem="Xac-G2-wsR" secondAttribute="bottom" constant="30" id="WB9-9U-z1T"/>
                             <constraint firstItem="aO8-Vt-1uq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="bID-fV-sjY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="70" id="hsh-t5-C66"/>
+                            <constraint firstItem="kFc-4N-3Pe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="mvp-DW-9Zm"/>
                             <constraint firstItem="Xac-G2-wsR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="oSE-2l-7h7"/>
+                            <constraint firstItem="kFc-4N-3Pe" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="oag-t0-UUf"/>
                             <constraint firstItem="Xac-G2-wsR" firstAttribute="top" secondItem="jIn-Rp-UZP" secondAttribute="bottom" constant="20" id="rbA-dy-Voq"/>
+                            <constraint firstItem="kFc-4N-3Pe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="6" id="u13-mr-Aus"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="100" id="wlK-nI-UdT"/>
                             <constraint firstItem="3QV-dj-01T" firstAttribute="top" secondItem="jRa-hi-Dq9" secondAttribute="bottom" constant="40" id="zU1-ek-cOS"/>
                             <constraint firstAttribute="centerX" secondItem="jIn-Rp-UZP" secondAttribute="centerX" id="zfH-Cv-oHz"/>
@@ -219,6 +227,7 @@
                     </view>
                     <connections>
                         <outlet property="firstLabel" destination="aO8-Vt-1uq" id="2SB-hf-JaT"/>
+                        <outlet property="scrollView" destination="kFc-4N-3Pe" id="Sfo-fp-TKp"/>
                         <outlet property="secondLabel" destination="jRa-hi-Dq9" id="5r8-dn-QqJ"/>
                         <outlet property="thirdLabel" destination="3QV-dj-01T" id="YXN-wG-hEc"/>
                         <outlet property="tweetTextView" destination="Xac-G2-wsR" id="VpL-O4-li7"/>
@@ -242,7 +251,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログインしていません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jeX-cl-2rb">
-                            <rect key="frame" x="0.0" y="-21" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.054901960780000002" green="0.47843137250000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -251,8 +260,10 @@
                         </label>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="143" id="qbq-KL-f1D" customClass="TweetTableViewCell" customModule="sandaibanashi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="130" width="600" height="143"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qbq-KL-f1D" id="5Sy-S5-Mx7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKv-sJ-Iaq">

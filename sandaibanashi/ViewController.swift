@@ -27,6 +27,8 @@ class ViewController: UIViewController,UITextViewDelegate{
     
     //投稿内容
     @IBOutlet var tweetTextView: UITextView! = UITextView()
+    
+    @IBOutlet var scrollView : UIScrollView? = UIScrollView()
 
     
     override func viewDidLoad() {
@@ -95,7 +97,7 @@ class ViewController: UIViewController,UITextViewDelegate{
             if saveItems.objectForKey("itemTitle") != nil{
             selectWord(readItem())
             }else{
-                println("いけてないやーつ")
+                print("いけてないやーつ")
             }
         }else{
             
@@ -138,7 +140,7 @@ class ViewController: UIViewController,UITextViewDelegate{
         var x,y,z : Int
         
         // 同じ数が被らないように乱数を発生させる
-        do {
+        repeat {
             x = Int(arc4random_uniform(30))
             y = Int(arc4random_uniform(30))
             z = Int(arc4random_uniform(30))
@@ -177,7 +179,7 @@ class ViewController: UIViewController,UITextViewDelegate{
     @IBAction func tweetButton(){
         
         // Tweetする内容を保存する用のクラス
-        var tweet:PFObject = PFObject(className: "Tweets")
+        let tweet:PFObject = PFObject(className: "Tweets")
         
         // ユーザーとTweet内容、３つのラベル用のカラムを作成。
         tweet["content"] = tweetTextView.text
@@ -193,7 +195,48 @@ class ViewController: UIViewController,UITextViewDelegate{
         // Tweet一覧が表示されるTimelineTableViewControllerに戻る
         self.navigationController!.popToRootViewControllerAnimated(true)
     }
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        tweetTextView = textView
+        return true
+    }
+    
+    
+    //改行ボタンが押された際に呼ばれるデリゲートメソッド.
+    func textViewShouldReturn(textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        
+        return true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+        
+    }
 
+    
+    func handleKeyboardWillShowNotification(notification: NSNotification) {
+        
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        let txtLimit = tweetTextView.frame.origin.y + tweetTextView.frame.height + 8
+        let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
+        
+        if txtLimit >= kbdLimit {
+            scrollView!.contentOffset.y = txtLimit - kbdLimit
+            
+        }
+    }
+    
+    func handleKeyboardWillHideNotification(notification: NSNotification) {
+        scrollView!.contentOffset.y = 0
+    }
 
 }
 

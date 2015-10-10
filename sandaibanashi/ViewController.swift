@@ -70,7 +70,7 @@ class ViewController: UIViewController,UITextViewDelegate{
     func randomWord(){
         
         let kizashiUrl = NSURL(string:"http://kizasi.jp/kizapi.py?type=rank")
-        let session: NSURLSession = NSURLSession(configuration: NSURLSessionConfiguration())
+        let session: NSURLSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         //NSURLConnectionを使いAPIを取得する
         let task = session.dataTaskWithURL(kizashiUrl!, completionHandler: {
             (data, res, error) in
@@ -80,9 +80,8 @@ class ViewController: UIViewController,UITextViewDelegate{
                 //保存していたxmlテキストを読み込み、ランダムに３つ取り出す
                 if self.saveItems.objectForKey("itemTitle") != nil{
                     self.selectWord(self.readItem())
-                }else{
-                    print("いけてないやーつ")
                 }
+                
             }else{
                 //通信に成功した時
                 let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
@@ -134,8 +133,10 @@ class ViewController: UIViewController,UITextViewDelegate{
         secondLabel.text = xml["rss"]["channel"]["item"][y]["title"].element!.text!
         thirdLabel.text = xml["rss"]["channel"]["item"][z]["title"].element!.text!
         
-        //Indicatorを止める
-        myActivityIndicator.stopAnimating()
+        dispatch_async(dispatch_get_main_queue(), {
+            //Indicatorを止める
+            self.myActivityIndicator.stopAnimating()
+            })
     }
     
     

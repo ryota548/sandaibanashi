@@ -37,8 +37,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Word Challenge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-hk-gib">
-                                <rect key="frame" x="170" y="164" width="261" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三題噺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-hk-gib">
+                                <rect key="frame" x="252" y="164" width="96" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QQD-9y-h4h"/>
                                 </constraints>
@@ -47,12 +47,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pge-Ib-dyM">
-                                <rect key="frame" x="164" y="289" width="273" height="40"/>
+                                <rect key="frame" x="228" y="289" width="144" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="EOT-0c-VyQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
-                                <state key="normal" title="3 Word Challengeとは？">
+                                <state key="normal" title="三題噺とは？">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -242,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="891" y="1404"/>
         </scene>
-        <!--3 Word Challenge-->
+        <!--三題噺-->
         <scene sceneID="D6G-7g-gfS">
             <objects>
                 <tableViewController id="Qt1-js-feL" customClass="TimelineTableViewController" customModule="sandaibanashi" customModuleProvider="target" sceneMemberID="viewController">
@@ -387,7 +387,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="3 Word Challenge" id="MK6-u8-h48">
+                    <navigationItem key="navigationItem" title="三題噺" id="MK6-u8-h48">
                         <barButtonItem key="leftBarButtonItem" title="はじめに" id="jYr-ka-fDJ">
                             <connections>
                                 <segue destination="UwU-H7-06e" kind="show" id="7x2-X9-rp6"/>

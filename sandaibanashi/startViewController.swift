@@ -25,7 +25,7 @@ class startViewController: UIViewController {
     
     //概要
     @IBAction func setumei(sender: UIButton){
-        let alertController = UIAlertController(title: "3 Word Challenge？", message: "落語の形態の一つで，観客に適当な言葉・題目を出させ，出された題目3つを折り込んで即興で演じる落語である．\n一つを「オチ」に使わないといけない．", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "三題噺？", message: "落語の形態の一つで，観客に適当な言葉・題目を出させ，出された題目3つを折り込んで即興で演じる落語である．\n一つを「オチ」に使わないといけない．", preferredStyle: .Alert)
         
         let defaultAction = UIAlertAction(title: "OK!", style: .Default, handler: nil)
         alertController.addAction(defaultAction)

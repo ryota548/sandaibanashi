@@ -49,7 +49,7 @@ class TimelineTableViewController: UITableViewController {
 
     
     override func viewDidAppear(animated: Bool) {
-        
+        // ここの認証いらんくない？
         //ログインされているかどうかを確かめる
         if ((PFUser.currentUser()) == nil) {
             self.currentUserName.text = "ログインできていません"

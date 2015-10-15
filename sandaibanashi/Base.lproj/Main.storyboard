@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qwq-dt-5L2">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -105,129 +104,143 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFc-4N-3Pe">
-                                <rect key="frame" x="4" y="6" width="592" height="594"/>
-                            </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QV-dj-01T" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
-                                <rect key="frame" x="274" y="234" width="52" height="20"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIn-Rp-UZP">
-                                <rect key="frame" x="214" y="282" width="172" height="37"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
-                                <state key="normal" title="Word Shafulle!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapRandom" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qcu-MA-UHq"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRa-hi-Dq9" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
-                                <rect key="frame" x="274" y="174" width="52" height="20"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-Vt-1uq" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
-                                <rect key="frame" x="274" y="114" width="52" height="20"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここに文章を書いてください。【Post!】を押すと投稿されます。" translatesAutoresizingMaskIntoConstraints="NO" id="Xac-G2-wsR">
-                                <rect key="frame" x="40" y="319" width="520" height="100"/>
-                                <color key="backgroundColor" red="0.25098039215686274" green="0.66666666666666663" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RvW-ik-Tjm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aET-vX-hUk" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-Vt-1uq" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
+                                                <rect key="frame" x="50" y="167" width="500" height="20"/>
+                                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRa-hi-Dq9" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
+                                                <rect key="frame" x="50" y="202" width="500" height="20"/>
+                                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIn-Rp-UZP">
+                                                <rect key="frame" x="50" y="282" width="500" height="37"/>
+                                                <color key="backgroundColor" red="0.98431372549999996" green="0.6588235294" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
+                                                <state key="normal" title="Word Shafulle!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tapRandom" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qcu-MA-UHq"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここに文章を書いてください。【Post!】を押すと投稿されます。" translatesAutoresizingMaskIntoConstraints="NO" id="Xac-G2-wsR">
+                                                <rect key="frame" x="20" y="347" width="560" height="80"/>
+                                                <color key="backgroundColor" red="0.25098039215686274" green="0.66666666666666663" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="8bi-5b-CoL"/>
+                                                    <constraint firstAttribute="width" constant="400" id="IyS-2c-uPZ"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="IyS-2c-uPZ"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kuD-ir-SCB"/>
+                                                </connections>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmR-Sl-ejN">
+                                                <rect key="frame" x="270" y="458" width="61" height="37"/>
+                                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
+                                                <state key="normal" title="Post!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tweetButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADY-EF-kkQ"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QV-dj-01T" customClass="SpringLabel" customModule="sandaibanashi" customModuleProvider="target">
+                                                <rect key="frame" x="50" y="237" width="500" height="20"/>
+                                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QmR-Sl-ejN" secondAttribute="trailing" constant="50" id="0pf-2v-ASW"/>
+                                            <constraint firstAttribute="trailing" secondItem="3QV-dj-01T" secondAttribute="trailing" constant="50" id="5AS-Av-MC9"/>
+                                            <constraint firstItem="QmR-Sl-ejN" firstAttribute="centerX" secondItem="aET-vX-hUk" secondAttribute="centerX" id="7hI-YY-AcZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="aO8-Vt-1uq" secondAttribute="trailing" constant="50" id="8tX-gd-N1a"/>
+                                            <constraint firstAttribute="trailing" secondItem="jRa-hi-Dq9" secondAttribute="trailing" constant="50" id="BiC-ln-sT9"/>
+                                            <constraint firstItem="QmR-Sl-ejN" firstAttribute="top" secondItem="Xac-G2-wsR" secondAttribute="bottom" constant="31" id="D2h-m9-Qrx"/>
+                                            <constraint firstAttribute="trailing" secondItem="jIn-Rp-UZP" secondAttribute="trailing" constant="50" id="I5J-7W-Ufk"/>
+                                            <constraint firstItem="aO8-Vt-1uq" firstAttribute="leading" secondItem="aET-vX-hUk" secondAttribute="leading" constant="50" id="R8c-hd-gM8"/>
+                                            <constraint firstItem="3QV-dj-01T" firstAttribute="leading" secondItem="aET-vX-hUk" secondAttribute="leading" constant="50" id="XVD-dg-KcI"/>
+                                            <constraint firstItem="Xac-G2-wsR" firstAttribute="top" secondItem="jIn-Rp-UZP" secondAttribute="bottom" constant="28" id="bGt-or-0rf"/>
+                                            <constraint firstItem="3QV-dj-01T" firstAttribute="top" secondItem="jRa-hi-Dq9" secondAttribute="bottom" constant="15" id="cJA-tk-wia"/>
+                                            <constraint firstItem="Xac-G2-wsR" firstAttribute="leading" secondItem="aET-vX-hUk" secondAttribute="leading" constant="20" id="h2f-Dv-uQQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xac-G2-wsR" secondAttribute="trailing" constant="20" id="i3Q-Ht-ovn"/>
+                                            <constraint firstItem="jRa-hi-Dq9" firstAttribute="leading" secondItem="aET-vX-hUk" secondAttribute="leading" constant="50" id="jH4-sH-Yc6"/>
+                                            <constraint firstItem="jIn-Rp-UZP" firstAttribute="leading" secondItem="aET-vX-hUk" secondAttribute="leading" constant="50" id="l0B-IC-6LD"/>
+                                            <constraint firstItem="QmR-Sl-ejN" firstAttribute="leading" secondItem="aET-vX-hUk" secondAttribute="leading" constant="50" id="sRV-Rj-S0R"/>
+                                            <constraint firstItem="jIn-Rp-UZP" firstAttribute="centerY" secondItem="aET-vX-hUk" secondAttribute="centerY" id="wB0-oA-BIu"/>
+                                            <constraint firstItem="jIn-Rp-UZP" firstAttribute="centerX" secondItem="aET-vX-hUk" secondAttribute="centerX" id="x8P-zI-3SC"/>
+                                            <constraint firstItem="jIn-Rp-UZP" firstAttribute="top" secondItem="3QV-dj-01T" secondAttribute="bottom" constant="25" id="yLu-7H-NWp"/>
+                                            <constraint firstItem="jRa-hi-Dq9" firstAttribute="top" secondItem="aO8-Vt-1uq" secondAttribute="bottom" constant="15" id="yeb-LB-Y9a"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0pf-2v-ASW"/>
+                                                <exclude reference="sRV-Rj-S0R"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="8bi-5b-CoL"/>
-                                    <constraint firstAttribute="width" constant="400" id="IyS-2c-uPZ"/>
+                                    <constraint firstItem="aET-vX-hUk" firstAttribute="leading" secondItem="RvW-ik-Tjm" secondAttribute="leading" id="FPP-zJ-460"/>
+                                    <constraint firstAttribute="trailing" secondItem="aET-vX-hUk" secondAttribute="trailing" id="UQT-dm-h8d"/>
+                                    <constraint firstItem="aET-vX-hUk" firstAttribute="top" secondItem="RvW-ik-Tjm" secondAttribute="top" id="vOW-W3-XI2"/>
+                                    <constraint firstAttribute="bottom" secondItem="aET-vX-hUk" secondAttribute="bottom" id="wVB-ph-Hc8"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IyS-2c-uPZ"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kuD-ir-SCB"/>
-                                </connections>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmR-Sl-ejN">
-                                <rect key="frame" x="270" y="449" width="61" height="37"/>
-                                <fontDescription key="fontDescription" name="Honoka-Maru-Gothic" family="Honoka Maru-Gothic" pointSize="25"/>
-                                <state key="normal" title="Post!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tweetButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADY-EF-kkQ"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.054901960784313725" green="0.47843137254901963" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Xac-G2-wsR" secondAttribute="centerX" id="3Ie-8y-zek"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kFc-4N-3Pe" secondAttribute="trailing" constant="-16" id="53s-Nd-IVY"/>
-                            <constraint firstAttribute="centerY" secondItem="jIn-Rp-UZP" secondAttribute="centerY" id="BkR-Yh-mQi"/>
-                            <constraint firstItem="jRa-hi-Dq9" firstAttribute="top" secondItem="aO8-Vt-1uq" secondAttribute="bottom" constant="40" id="CHe-l7-Do1"/>
-                            <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="F0z-t4-Sf3"/>
-                            <constraint firstAttribute="centerX" secondItem="aO8-Vt-1uq" secondAttribute="centerX" id="Fm1-Cy-AYv"/>
-                            <constraint firstItem="Xac-G2-wsR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Fzz-W5-ay8"/>
-                            <constraint firstAttribute="centerX" secondItem="3QV-dj-01T" secondAttribute="centerX" id="IKW-SR-NMj"/>
-                            <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="Le6-10-j1B"/>
-                            <constraint firstAttribute="centerY" secondItem="QmR-Sl-ejN" secondAttribute="centerY" id="Of7-ja-5Lf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Xac-G2-wsR" secondAttribute="trailing" constant="20" id="TUv-nV-8Sc"/>
-                            <constraint firstAttribute="centerX" secondItem="QmR-Sl-ejN" secondAttribute="centerX" id="ThG-JD-kY1"/>
-                            <constraint firstAttribute="centerX" secondItem="jRa-hi-Dq9" secondAttribute="centerX" id="VEz-Jn-ayh"/>
-                            <constraint firstItem="QmR-Sl-ejN" firstAttribute="top" secondItem="Xac-G2-wsR" secondAttribute="bottom" constant="30" id="WB9-9U-z1T"/>
-                            <constraint firstItem="aO8-Vt-1uq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="bID-fV-sjY"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="70" id="hsh-t5-C66"/>
-                            <constraint firstItem="kFc-4N-3Pe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="mvp-DW-9Zm"/>
-                            <constraint firstItem="Xac-G2-wsR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="oSE-2l-7h7"/>
-                            <constraint firstItem="kFc-4N-3Pe" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="oag-t0-UUf"/>
-                            <constraint firstItem="Xac-G2-wsR" firstAttribute="top" secondItem="jIn-Rp-UZP" secondAttribute="bottom" constant="20" id="rbA-dy-Voq"/>
-                            <constraint firstItem="kFc-4N-3Pe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="6" id="u13-mr-Aus"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QmR-Sl-ejN" secondAttribute="bottom" constant="100" id="wlK-nI-UdT"/>
-                            <constraint firstItem="3QV-dj-01T" firstAttribute="top" secondItem="jRa-hi-Dq9" secondAttribute="bottom" constant="40" id="zU1-ek-cOS"/>
-                            <constraint firstAttribute="centerX" secondItem="jIn-Rp-UZP" secondAttribute="centerX" id="zfH-Cv-oHz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="RvW-ik-Tjm" secondAttribute="bottom" id="3zd-xc-l4N"/>
+                            <constraint firstItem="RvW-ik-Tjm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="G8I-VG-SmY"/>
+                            <constraint firstItem="aET-vX-hUk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="KOS-Tw-6KR"/>
+                            <constraint firstAttribute="trailing" secondItem="RvW-ik-Tjm" secondAttribute="trailing" id="c9u-Ng-EXg"/>
+                            <constraint firstItem="RvW-ik-Tjm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hMT-R1-kR2"/>
+                            <constraint firstItem="aET-vX-hUk" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="k1P-u9-Uic"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                             <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
                         </userDefinedRuntimeAttributes>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Fzz-W5-ay8"/>
-                                <exclude reference="rbA-dy-Voq"/>
-                                <exclude reference="Le6-10-j1B"/>
-                                <exclude reference="Of7-ja-5Lf"/>
-                                <exclude reference="ThG-JD-kY1"/>
-                                <exclude reference="wlK-nI-UdT"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="BOL-6j-J4A" appends="YES" id="NHD-54-z0g"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="firstLabel" destination="aO8-Vt-1uq" id="2SB-hf-JaT"/>
-                        <outlet property="scrollView" destination="kFc-4N-3Pe" id="Sfo-fp-TKp"/>
+                        <outlet property="scrollView" destination="RvW-ik-Tjm" id="iKk-IE-aBM"/>
                         <outlet property="secondLabel" destination="jRa-hi-Dq9" id="5r8-dn-QqJ"/>
                         <outlet property="thirdLabel" destination="3QV-dj-01T" id="YXN-wG-hEc"/>
                         <outlet property="tweetTextView" destination="Xac-G2-wsR" id="VpL-O4-li7"/>

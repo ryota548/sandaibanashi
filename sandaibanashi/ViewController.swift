@@ -30,7 +30,7 @@ class ViewController: UIViewController,UITextViewDelegate{
     
     @IBOutlet var scrollView : UIScrollView? = UIScrollView()
 
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -128,12 +128,14 @@ class ViewController: UIViewController,UITextViewDelegate{
             z = Int(arc4random_uniform(30))
         } while x == y || y == z || z == x
         
-        //XMLの要素を取得しラベルへつっこむ
-        firstLabel.text = xml["rss"]["channel"]["item"][x]["title"].element!.text!
-        secondLabel.text = xml["rss"]["channel"]["item"][y]["title"].element!.text!
-        thirdLabel.text = xml["rss"]["channel"]["item"][z]["title"].element!.text!
         
         dispatch_async(dispatch_get_main_queue(), {
+            
+            //XMLの要素を取得しラベルへつっこむ
+            self.firstLabel.text = xml["rss"]["channel"]["item"][x]["title"].element!.text!
+            self.secondLabel.text = xml["rss"]["channel"]["item"][y]["title"].element!.text!
+            self.thirdLabel.text = xml["rss"]["channel"]["item"][z]["title"].element!.text!
+            
             //Indicatorを止める
             self.myActivityIndicator.stopAnimating()
             })
@@ -191,6 +193,12 @@ class ViewController: UIViewController,UITextViewDelegate{
         return true
     }
     
+    //画面がタップされた際にキーボードを閉じる処理
+    func tapGesture(sender: UITapGestureRecognizer) {
+        tweetTextView.resignFirstResponder()
+        
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -205,8 +213,11 @@ class ViewController: UIViewController,UITextViewDelegate{
     func handleKeyboardWillShowNotification(notification: NSNotification) {
         
         let userInfo = notification.userInfo!
+        //キーボードの大きさ取得
         let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        //画面の大きさ取得
         let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        //textViewまでの距離を計算
         let txtLimit = tweetTextView.frame.origin.y + tweetTextView.frame.height + 8
         let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
         
@@ -218,6 +229,14 @@ class ViewController: UIViewController,UITextViewDelegate{
     
     func handleKeyboardWillHideNotification(notification: NSNotification) {
         scrollView!.contentOffset.y = 0
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
 
 }
